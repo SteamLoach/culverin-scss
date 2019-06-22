@@ -2,11 +2,12 @@
 @import './resets/reset';
 
 /****Config****/
-@import './config.scss' ; 
+@import './config' ; 
 
 /****Scaffolding Classes****/
 
 /****Mixins****/
+@import './mixins/theme' ; 
 @import './mixins/dimensions' ; 
 @import './mixins/position' ; 
 @import './mixins/containers' ; 
