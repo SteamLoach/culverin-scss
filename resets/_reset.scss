@@ -63,6 +63,7 @@ button {
   border-radius: 0;
   line-height: 1;
   background-color: transparent;
+  cursor: pointer;
 }
 
 button * {
@@ -105,6 +106,7 @@ table {
 }
 
 a {
+  display: inline-block;
   color: inherit;
   font: inherit;
   letter-spacing: inherit;

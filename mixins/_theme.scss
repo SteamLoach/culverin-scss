@@ -7,3 +7,31 @@ $shade-light: hsl(0, 0%, 86%);
 $shade-lighter: hsl(0, 0%, 96%);
 $shade-lightest: hsl(0, 0%, 98%);
 $shade-white: hsl(0, 0%, 100%) ; 
+
+
+//Shadow
+$shadow-default: $shade-darker ; 
+
+@mixin centered-shadow($guage) {
+  @if $guage == light {
+    box-shadow: 0px 0px 3px 2px $shadow-default ;  
+  }
+  @else if $guage == medium {
+    box-shadow: 0px 0px 5px 4px $shadow-default ;
+  }
+  @else if $guage == heavy {
+    box-shadow: 0px 0px 7px 6px $shadow-default ;
+  }
+}
+
+@mixin centered-shadow-until ($breakpoint, $guage) {
+  @media screen and (max-width: $breakpoint) {
+    @include centered-shadow($guage) ; 
+  }
+}
+
+@mixin centered-shadow-from ($breakpoint, $guage) {
+  @media screen and (min-width: $breakpoint) {
+    @include centered-shadow($guage) ; 
+  }
+}
