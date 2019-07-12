@@ -16,8 +16,42 @@
 
 /****Breakpoint Concious****/
 
+@mixin margin-until($breakpoint, $dir, $val) {
+  @media screen and (max-width: $breakpoint - 1px) {
+    @if $dir == top {
+      margin-top: $val;
+    }
+    @else if $dir == right {
+      margin-right: $val;
+    }
+    @else if $dir == bottom {
+      margin-bottom: $val;
+    }
+    @else if $dir == left {
+      margin-left: $val;
+    }
+  }
+}
+
+@mixin margin-from($breakpoint, $dir, $val) {
+  @media screen and (min-width: $breakpoint) {
+    @if $dir == top {
+      margin-top: $val;
+    }
+    @else if $dir == right {
+      margin-right: $val;
+    }
+    @else if $dir == bottom {
+      margin-bottom: $val;
+    }
+    @else if $dir == left {
+      margin-left: $val;
+    }
+  }
+}
+
 @mixin x-margin-until($breakpoint, $margin) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     @include x-margin($margin) ; 
   }
 }
@@ -29,7 +63,7 @@
 }
 
 @mixin y-margin-until($breakpoint, $margin) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     @include y-margin($margin) ; 
   }
 }
@@ -41,14 +75,14 @@
 }
 
 @mixin xy-margin-until($breakpoint, $margin) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     @include x-margin($margin) ; 
     @include y-margin($margin) ; 
   }
 }
 
 @mixin custom-margin-until($breakpoint, $top, $right, $bottom, $left) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     margin-top: $top;
     margin-right: $right;
     margin-left: $left;
@@ -66,7 +100,7 @@
 }
 
 @mixin oneway-margin-until($breakpoint, $val) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     margin-bottom: $val ; 
   }
 }

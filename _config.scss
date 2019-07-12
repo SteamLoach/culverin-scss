@@ -1,96 +1,79 @@
-/****Colorscheme****/
+/********THEME********/
 
-//fonts
+/****Fonts****/
+
+//Typography
+$font-set: 'Raleway', sans-serif;
+$font-size-root: 22px;
+$line-height-root: 1.6;
+
+//Font Color
 $default-font-color: hsl(0, 0%, 14%);
 $offset-font-color: hsl(0, 0%, 98%);
 
-//page
-$background: #EEE;
+
+/****Elements****/
+
+//Base
+$page-background: #EEE;
+$shade-base: '';
+$shade-light: '';
+$shade-medium: '';
+$shade-dark: '';
+
+//Brand
 $brand-1: #6E6168;
 $brand-2: #197695;
 $brand-3: #3D9963;
 $brand-4: #5E4C5A;
 $brand-5: #FF8300;
 
-//components
-$cta: $brand-2;
+//CTAs
+$call-to-action-1: $brand-2;
+$call-to-action-2: $brand-3;
+
+//Border
+$border-light: '';
+$border-medium: '';
+$border-dark: '';
+
+//Shadow
+$shadow-light: '';
+$shadow-medium: '';
+$shadow-dark: '';
 
 
-
-/****Typography****/
-
-$font-set: 'Raleway', sans-serif;
-$font-size-root: 22px;
-$line-height-root: 1.6;
-
-
-/**********************************CLASSES******************************/
-
-/****BREAKPOINTS****/
+/********BREAKPOINTS********/
 
 $touch: 425px;
 $tablet: 768px;
 $laptop: 1024px;
 $desktop: 1440px;
-////
-$mobile-until: $touch;
-$touch-until: $tablet;
-$tablet-until: $laptop;
-$laptop-until: $desktop; 
-////
-$touch-from: $touch;
-$tablet-from: $tablet;
-$laptop-from: $laptop;
-$desktop-from: $desktop;
 
-/****COLUMNS****/
+
+/********COLUMNS********/
 
 $grid-columns: 24; //alters the number of calculated 'width' columns
 
 
-/****FONT****/
-$font-size-smallest: 0.6rem;
-$font-size-smaller: 0.8rem;
-$font-size-small: 0.9rem;
-$font-size-medium: $font-size-root;
-$font-size-large: 1.2rem;
-$font-size-larger: 1.6rem;
-$font-size-largest: 2rem;
-////
-$line-height-none: 1;
-$line-height-smallest: 1.1;
-$line-height-smaller: 1.2;
-$line-height-small: 1.4;
-$line-height-medium: $line-height-root;
-$line-height-large: 1.8;
-$line-height-larger: 2;
-$line-height-largest: 2.4;
+/********PADDING********/
 
-/****PADDING****/
-$padding-1: 0.2rem;
-$padding-2: 0.5rem;
-$padding-3: 0.8rem;
-$padding-4: 1rem;
-$padding-5: 1.5rem;
-$padding-6: 2rem;
-$padding-7: 2.5rem;
-$padding-8: 3rem;
-$padding-9: 3.5rem;
-$padding-10: 4rem;
-$padding-11: 5rem;
-$padding-12: 6rem;
+$pad-light: 0.5rem;
+$pad-base: 1rem;
+$pad-medium: 1.5rem;
+$pad-heavy: 2rem;
 
-/****MARGINS****/
-$margin-1: 0.4rem;
-$margin-2: 0.8rem;
-$margin-3: 1.2rem;
-$margin-4: 1.8rem;
-$margin-5: 2.4rem;
-$margin-6: 3rem;
-$margin-7: 3.6rem;
-$margin-8: 4.2rem;
-$margin-9: 5rem;
-$margin-10: 6.2rem;
-$margin-11: 7.6rem;
-$margin-12: 10rem;
-////
+
+/********MARGINS********/
+
+/****Inner****/
+$inner-margin-light: 0.5rem;
+$inner-margin-base: 1rem;
+$inner-margin-medium: 1.5rem;
+$inner-margin-heavy: 2rem;
+
+/****Outer****/
+$outer-margin-light: 1.5rem;
+$outer-margin-base: 2rem;
+$outer-margin-medium: 2.5rem;
+$outer-margin-heavy: 4rem;

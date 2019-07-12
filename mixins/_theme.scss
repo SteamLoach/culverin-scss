@@ -35,3 +35,10 @@ $shadow-default: $shade-darker ;
     @include centered-shadow($guage) ; 
   }
 }
+
+//Backgrounds
+%full-width-cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

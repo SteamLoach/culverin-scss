@@ -46,7 +46,7 @@
 
 /****Hide Element****/
 @mixin hidden-until ($breakpoint) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     display: none;
   }
 }
@@ -60,7 +60,7 @@
 
 /****Prevent Wrapping****/
 @mixin nowrap-until($breakpoint) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     flex-wrap: nowrap;
   }
 }
@@ -74,7 +74,7 @@
 
 /****Allow Wrapping****/
 @mixin can-wrap-until($breakpoint) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     flex-wrap: wrap;
   }
 }

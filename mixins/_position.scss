@@ -85,7 +85,7 @@
 
 /****Justify****/
 @mixin x-until($breakpoint, $val) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     @include justify($val) ; 
   }
 }
@@ -98,7 +98,7 @@
 
 /****Align Items****/
 @mixin y-until($breakpoint, $val) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     @include align($val) ; 
   }
 }
@@ -111,7 +111,7 @@
 
 
 @mixin yc-until($breakpoint, $val) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     @include align-c($val) ; 
   }
 }
@@ -123,7 +123,7 @@
 }
 
 @mixin absolute-until($breakpoint) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     position: absolute;
   }
 }

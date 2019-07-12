@@ -14,7 +14,7 @@ html {
 /****Breakpoint Concious Font Size****/
 
 @mixin font-size-until ($breakpoint, $size) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     font-size: $size;
   }
 }
@@ -28,7 +28,7 @@ html {
 /****Breakpoint Concious Line Height****/
 
 @mixin line-height-until ($breakpoint, $size) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     line-height: $size;
   }
 }
@@ -42,7 +42,7 @@ html {
 /****Breakpoint Concious Font Weight****/
 
 @mixin font-weight-until ($breakpoint, $weight) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     font-weight: $weight;
   }
 }
@@ -56,7 +56,7 @@ html {
 /****Breakpoint Concious Alignment****/
 
 @mixin text-align-until ($breakpoint, $alignment) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     @if $alignment == left {
       text-align: left;
     }

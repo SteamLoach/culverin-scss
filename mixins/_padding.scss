@@ -16,8 +16,42 @@
 
 /****Breakpoint Concious****/
 
+@mixin pad-until($breakpoint, $dir, $val) {
+  @media screen and (max-width: $breakpoint - 1px) {
+    @if $dir == top {
+      padding-top: $val;
+    }
+    @else if $dir == right {
+      padding-right: $val;
+    }
+    @else if $dir == bottom {
+      padding-bottom: $val;
+    }
+    @else if $dir == left {
+      padding-left: $val;
+    }
+  }
+}
+
+@mixin pad-from($breakpoint, $dir, $val) {
+  @media screen and (min-width: $breakpoint) {
+    @if $dir == top {
+      padding-top: $val;
+    }
+    @else if $dir == right {
+      padding-right: $val;
+    }
+    @else if $dir == bottom {
+      padding-bottom: $val;
+    }
+    @else if $dir == left {
+      padding-left: $val;
+    }
+  }
+}
+
 @mixin x-pad-until($breakpoint, $pad) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     @include x-pad($pad) ; 
   }
 }
@@ -29,7 +63,7 @@
 }
 
 @mixin y-pad-until($breakpoint, $pad) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     @include y-pad($pad) ; 
   }
 }
@@ -41,14 +75,21 @@
 }
 
 @mixin xy-pad-until($breakpoint, $pad) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
+    @include x-pad($pad) ; 
+    @include y-pad($pad) ; 
+  }
+}
+
+@mixin xy-pad-from($breakpoint, $pad) {
+  @media screen and (min-width: $breakpoint) {
     @include x-pad($pad) ; 
     @include y-pad($pad) ; 
   }
 }
 
 @mixin custom-pad-until($breakpoint, $top, $right, $bottom, $left) {
-  @media screen and (max-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
     padding-top: $top;
     padding-right: $right;
     padding-left: $left;
