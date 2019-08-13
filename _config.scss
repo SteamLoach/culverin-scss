@@ -3,77 +3,71 @@
 /****Fonts****/
 
 //Typography
-$font-set: 'Raleway', sans-serif;
-$font-size-root: 22px;
-$line-height-root: 1.6;
+$primary-font: 'Arial', sans-serif !default;
+$secondary-font: 'Verdana', sans-serif !default;
+
+$font-size-root: 22px !default;
+$line-height-root: 1.6 !default;
 
 //Font Color
-$default-font-color: hsl(0, 0%, 14%);
-$offset-font-color: hsl(0, 0%, 98%);
+$default-font-color: hsl(0, 0%, 25%) !default;
+$offset-font-color: hsl(0, 0%, 92%) !default;
 
 
 /****Elements****/
 
 //Base
-$page-background: #EEE;
-$shade-base: '';
-$shade-light: '';
-$shade-medium: '';
-$shade-dark: '';
+$page-background: #EDF7F6 !default;
+$shade-base: '' !default;
+$shade-light: '' !default;
+$shade-medium: '' !default;
+$shade-dark: '' !default;
 
 //Brand
-$brand-1: #6E6168;
-$brand-2: #197695;
-$brand-3: #3D9963;
-$brand-4: #5E4C5A;
-$brand-5: #FF8300;
+$brand-1: #FFE43A !default;
+$brand-2: #35A7FF !default;
+$brand-3: #FF5964 !default;
+$brand-4: #06D6A0 !default;
+$brand-5: #06D6A0 !default; 
 
 //CTAs
-$call-to-action-1: $brand-2;
-$call-to-action-2: $brand-3;
+$call-to-action-1: $brand-2 !default;
+$call-to-action-2: $brand-3 !default;
 
 //Border
-$border-light: '';
-$border-medium: '';
-$border-dark: '';
+$border-light: '' !default;
+$border-medium: '' !default;
+$border-dark: '' !default;
 
 //Shadow
-$shadow-light: '';
-$shadow-medium: '';
-$shadow-dark: '';
+$shadow-light: '' !default;
+$shadow-medium: '' !default;
+$shadow-dark: '' !default;
 
 
 /********BREAKPOINTS********/
 
-$touch: 425px;
-$tablet: 768px;
-$laptop: 1024px;
-$desktop: 1440px;
+$touch: 425px !default;
+$tablet: 768px !default;
+$laptop: 1024px !default;
+$desktop: 1440px !default;
 
 
 /********COLUMNS********/
 
-$grid-columns: 24; //alters the number of calculated 'width' columns
+$grid-columns: 24 !default; //alters the number of calculated 'width' columns
 
 
-/********PADDING********/
-
-$pad-light: 0.5rem;
-$pad-base: 1rem;
-$pad-medium: 1.5rem;
-$pad-heavy: 2rem;
-
-
-/********MARGINS********/
+/********SPACING********/
 
 /****Inner****/
-$inner-margin-light: 0.5rem;
-$inner-margin-base: 1rem;
-$inner-margin-medium: 1.5rem;
-$inner-margin-heavy: 2rem;
+$space-light: 0.5rem !default;
+$space-base: 1rem !default;
+$space-medium: 1.5rem !default;
+$space-heavy: 2rem !default;
 
 /****Outer****/
-$outer-margin-light: 1.5rem;
-$outer-margin-base: 2rem;
-$outer-margin-medium: 2.5rem;
-$outer-margin-heavy: 4rem;
+$outer-space-base: 1rem !default;
+$outer-space-light: 1.5rem !default;
+$outer-space-medium: 2.5rem !default;
+$outer-space-heavy: 4rem !default;

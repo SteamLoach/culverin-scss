@@ -8,6 +8,8 @@
 %row {
   position: relative;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -20,7 +22,10 @@
 
 %container {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
@@ -32,7 +37,10 @@
 
 
 %wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
@@ -61,13 +69,13 @@
 /****Prevent Wrapping****/
 @mixin nowrap-until($breakpoint) {
   @media screen and (max-width: $breakpoint - 1px) {
-    flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap; flex-wrap: nowrap;
   }
 }
 
 @mixin nowrap-from($breakpoint) {
   @media screen and (min-width: $breakpoint) {
-    flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;flex-wrap: nowrap;
   }
 }
 
@@ -75,12 +83,12 @@
 /****Allow Wrapping****/
 @mixin can-wrap-until($breakpoint) {
   @media screen and (max-width: $breakpoint - 1px) {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;flex-wrap: wrap;
   }
 }
 
 @mixin can-wrap-from($breakpoint) {
   @media screen and (min-width: $breakpoint) {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap; flex-wrap: wrap;
   }
 }
