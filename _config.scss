@@ -61,13 +61,15 @@ $grid-columns: 24 !default; //alters the number of calculated 'width' columns
 /********SPACING********/
 
 /****Inner****/
-$space-light: 0.5rem !default;
-$space-base: 1rem !default;
-$space-medium: 1.5rem !default;
-$space-heavy: 2rem !default;
+$space-lighter: 0.4rem !default;
+$space-light: 0.8rem !default;
+$space-medium: 1.2rem !default;
+$space-heavy: 1.6rem !default;
+$space-heavier: 2.4rem !default;
 
 /****Outer****/
-$outer-space-base: 1rem !default;
-$outer-space-light: 1.5rem !default;
-$outer-space-medium: 2.5rem !default;
-$outer-space-heavy: 4rem !default;
+$outer-space-lighter: 0.8rem !default;
+$outer-space-light: 1.2rem !default;
+$outer-space-medium: 1.8rem !default;
+$outer-space-heavy: 2.6rem !default;
+$outer-space-heavier: 4rem !default;
