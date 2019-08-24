@@ -11,6 +11,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 @mixin row($x, $y) {
