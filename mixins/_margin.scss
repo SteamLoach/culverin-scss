@@ -62,6 +62,12 @@
   }
 }
 
+@mixin x-margin-between($start, $end, $margin) {
+  @media screen and (min-width: $start) and (max-width: $end - 1px) {
+    @include x-margin($margin) ; 
+  }
+}
+
 @mixin y-margin-until($breakpoint, $margin) {
   @media screen and (max-width: $breakpoint - 1px) {
     @include y-margin($margin) ; 
@@ -74,10 +80,23 @@
   }
 }
 
+@mixin y-margin-between($start, $end, $margin) {
+  @media screen and (min-width: $start) and (max-width: $end - 1px) {
+    @include y-margin($margin) ; 
+  }
+}
+
 @mixin xy-margin-until($breakpoint, $margin) {
   @media screen and (max-width: $breakpoint - 1px) {
     @include x-margin($margin) ; 
     @include y-margin($margin) ; 
+  }
+}
+
+@mixin xy-margin-between($start, $end, $margin) {
+  @media screen and (min-width: $start) and (max-width: $end - 1px) {
+    @include x-margin($margin) ;
+    @include y-margin($margin) ;
   }
 }
 
@@ -99,6 +118,15 @@
   }
 }
 
+@mixin custom-margin-between($start, $end, $top, $right, $bottom, $left) {
+  @media screen and (min-width: $start) and (max-width: $end - 1px) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-left: $left;
+    margin-bottom: $bottom; 
+  }
+}
+
 @mixin oneway-margin-until($breakpoint, $val) {
   @media screen and (max-width: $breakpoint - 1px) {
     margin-bottom: $val ; 
@@ -108,5 +136,11 @@
 @mixin oneway-margin-from($breakpoint, $val) {
   @media screen and (min-width: $breakpoint) {
     margin-bottom: $val ; 
+  }
+}
+
+@mixin oneway-margin-between($start, $end, $margin) {
+  @media screen and (min-width: $start) and (max-width: $end - 1px) {
+    margin-bottom: $margin; 
   }
 }

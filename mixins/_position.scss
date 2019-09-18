@@ -7,7 +7,9 @@
 @mixin justify($val) {
   
     @if $val == center {
-      -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
     }
     @else if $val == around {
       -ms-flex-pack: distribute;justify-content: space-around;

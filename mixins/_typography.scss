@@ -2,15 +2,6 @@
 ***********TYPOGRAPHY****************
 ************************************/
 
-/****Font defaults****/
-
-html {
-  font-family: $primary-font;
-  font-size: $font-size-root;
-  line-height: $line-height-root;
-  color: $default-font-color;
-}
-
 /****Breakpoint Concious Font Size****/
 
 @mixin font-size-until ($breakpoint, $size) {

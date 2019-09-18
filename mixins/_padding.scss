@@ -62,6 +62,12 @@
   }
 }
 
+@mixin x-pad-between($start, $end, $pad) {
+  @media screen and (min-width: $start) and (max-width: $end - 1px) {
+    @include x-pad($pad) ; 
+  }
+}
+
 @mixin y-pad-until($breakpoint, $pad) {
   @media screen and (max-width: $breakpoint - 1px) {
     @include y-pad($pad) ; 
@@ -70,6 +76,12 @@
 
 @mixin y-pad-from($breakpoint, $pad) {
   @media screen and (min-width: $breakpoint) {
+    @include y-pad($pad) ; 
+  }
+}
+
+@mixin y-pad-between($start, $end, $pad) {
+  @media screen and (min-width: $start) and (max-width: $end - 1px) {
     @include y-pad($pad) ; 
   }
 }
@@ -88,6 +100,13 @@
   }
 }
 
+@mixin xy-pad-between($start, $end, $pad) {
+  @media screen and (min-width: $start) and (max-width: $end - 1px) {
+    @include x-pad($pad) ;
+    @include y-pad($pad) ;
+  }
+}
+
 @mixin custom-pad-until($breakpoint, $top, $right, $bottom, $left) {
   @media screen and (max-width: $breakpoint - 1px) {
     padding-top: $top;
@@ -103,5 +122,14 @@
     padding-right: $right;
     padding-left: $left;
     padding-bottom: $bottom;
+  }
+}
+
+@mixin custom-pad-between($start, $end, $top, $right, $bottom, $left) {
+  @media screen and (min-width: $start) and (max-width: $end - 1px) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-left: $left;
+    padding-bottom: $bottom; 
   }
 }
