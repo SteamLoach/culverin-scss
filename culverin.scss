@@ -1,8 +1,15 @@
+/****Supporting Variables****/
+@import './variables' ;
+
 /****Config****/
 @import './config' ; 
 
+/****HTML Base****/
+@import './html-base' ;
+
 /****Mixins****/
-@import './mixins/theme' ; 
+@import './mixins/theme' ;
+@import './mixins/backgrounds' ;
 @import './mixins/dimensions' ; 
 @import './mixins/position' ; 
 @import './mixins/containers' ; 
@@ -10,3 +17,9 @@
 @import './mixins/margin' ; 
 @import './mixins/typography';
 @import './mixins/transitions';
+
+/****Components****/
+@import './components/minor-items';
+@import './components/content-panels';
+
+

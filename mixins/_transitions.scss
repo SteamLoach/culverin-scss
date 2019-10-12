@@ -1,34 +1,5 @@
-@mixin ease-in-all($secs) {
-  transition: all;
-  transition-duration: $secs;
-  transition-timing-function: ease;
-}
-
-
-//offscreen mixins require an associated 'is-active' class to set onscreen position
-@mixin hide-offscreen($direction) {
-  @if $direction == left {
-    left: 1000px;
-  }
-  @else if $direction == top {
-    top: -1000px;
-  }
-  @else if $direction == right {
-    right: -1000px;
-  }
-  @else if $direction == bottom {
-    bottom: 1000px;
-  }
-}
-
-@mixin hide-offscreen-until($breakpoint, $direction) {
-  @media screen and (max-width: $breakpoint) {
-    @include hide-offscreen($direction) ; 
-  }
-}
-
-@mixin hide-offscreen-from($breakpoint, $direction) {
-  @media screen and (min-width: $breakpoint) {
-    @include hide-offscreen($direction) ; 
-  }
+@mixin standard-transition($prop) {
+  transition-property: $prop;
+  transition-duration: $transition-duration;
+  transition-timing-function: ease-in-out;
 }

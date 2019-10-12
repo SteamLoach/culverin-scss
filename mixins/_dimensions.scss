@@ -25,3 +25,22 @@
     height: $height;
   }
 }
+
+/****MULTI ITEM ROWS****/
+
+@mixin items-per-row($items) {
+  @include column(22);
+    @include column-break($fablet, 20);
+      @include column-break($tablet, 11);
+  
+  @if $items == 3 {
+        @include column-break($laptop, 7);
+  }  
+  
+  @if $items == 4 {
+        @include column-break($laptop, 7);
+          @include column-break($desktop, 5);
+  }
+}
+
+

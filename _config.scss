@@ -6,41 +6,54 @@
 $primary-font: 'Arial', sans-serif !default;
 $secondary-font: 'Verdana', sans-serif !default;
 
-$font-size-root: 22px !default;
-$line-height-root: 1.6 !default;
+$root-font-size: 22px !default;
+$root-line-height: 1.6 !default;
 
 //Font Color
-$default-font-color: hsl(0, 0%, 25%) !default;
-$offset-font-color: hsl(0, 0%, 92%) !default;
+$font-color: $shade-darkest !default;
+$offset-font-color: $shade-lighter !default;
 
 
 /****Elements****/
 
 //Base
 $page-background: #EDF7F6 !default;
+$max-content-width: 1140px !default;
 
-$shadow-default: hsl(0, 0%, 29%) !default;
+//Borders & Shadow
+$shadow-color: $shade-darker !default;
+$border-color: $shade-darker !default;
+
+$border-radius: 10px;
+
+//Titles
+$title-color: $shade-darkest !default;
+$title-line-height: 1.2 !default;
+
+$h1-size: 2.2rem !default;
+$h2-size: 1.4rem !default;
+$h3-size: 1.2rem !default;
 
 //Brand
 $brand-1: #FFE43A !default;
 $brand-2: #35A7FF !default;
 $brand-3: #FF5964 !default;
+$brand-accent: #FF5964 !default;
+$brand-offset: #EDF2F4 !default;
+
 $brand-4: #06D6A0 !default;
 $brand-5: #06D6A0 !default; 
+$brand-shade-1: #DEDFFE !default;
+$brand-shade-2: #DEDFFE !default;
+$brand-shade-3: #DEDFFE !default;
 
 //CTAs
-$call-to-action-1: $brand-2 !default;
-$call-to-action-2: $brand-3 !default;
+$cta-color-1: $brand-2 !default;
+$cta-color-2: $brand-3 !default;
+$cta-border-radius: 25px !default;
 
-//Border
-$border-light: '' !default;
-$border-medium: '' !default;
-$border-dark: '' !default;
-
-//Shadow
-$shadow-light: '' !default;
-$shadow-medium: '' !default;
-$shadow-dark: '' !default;
+//Transitions
+$transition-duration: 0.3s;
 
 
 /********BREAKPOINTS********/
@@ -72,3 +85,58 @@ $outer-space-light: 1.2rem !default;
 $outer-space-medium: 1.8rem !default;
 $outer-space-heavy: 2.6rem !default;
 $outer-space-heavier: 4rem !default;
+
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+
+
+/********COMPONENTS********/
+
+/****Content Panels****/
+$content-panel-x-pad: $outer-space-heavy !default;
+$content-panel-y-pad: $outer-space-heavy !default;
+
+/**Content Items**/
+
+/*Small*/
+$small-card-font-size: 0.8rem !default;
+$small-card-handheld-oneway-margin: $outer-space-lighter !default;
+$small-card-desktop-oneway-margin: $outer-space-medium !default;
+$small-card-outer-pad: $space-medium !default;
+$small-card-inner-pad: $space-lighter !default;
+
+/*Medium*/
+$medium-card-font-size: 0.8rem !default;
+$medium-card-handheld-oneway-margin: $outer-space-light !default;
+$medium-card-desktop-oneway-margin: $outer-space-heavy !default;
+$medium-card-outer-pad: $space-heavy !default;
+$medium-card-inner-pad: $space-light !default;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

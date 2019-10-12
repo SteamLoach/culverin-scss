@@ -1,0 +1,21 @@
+/****Buttons, Icons, Accents****/
+
+//CTAs
+
+%cta {
+  @include x-pad($space-medium);
+  @include y-pad($space-lighter);
+  color: $brand-1;
+  border: solid 2px $brand-1;
+  border-radius: $cta-border-radius;
+    
+  &:hover {
+    cursor: pointer;
+    color: $offset-font-color;
+    background-color: $brand-1;
+  }
+}
+
+
+
+

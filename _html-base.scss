@@ -1,0 +1,38 @@
+  
+%html-base {
+  
+  //Font Base
+  font-family: $primary-font;
+  font-size: $root-font-size;
+  line-height: $root-line-height;
+  color: $font-color;
+  
+  //Page Background
+  background-color: $page-background;
+  
+  //Body
+  body {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  //Titles
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $shade-darkest;
+    line-height: $title-line-height;
+  }
+  
+  h1 {font-size: $h1-size;}
+  h2 {font-size: $h2-size;}
+  h3 {font-size: $h3-size;}
+   
+}
+
+
+
+  
