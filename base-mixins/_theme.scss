@@ -1,0 +1,83 @@
+//Shadows
+@mixin under-shadow($shadow-shade: $shadow-color) {
+  box-shadow: 0 5px 20px -5px $shadow-shade;
+}
+
+@mixin under-shadow-until ($breakpoint, $guage, $shadow-shade: $shadow-color) {
+  @media screen and (max-width: $breakpoint) {
+    @include under-shadow($guage, $shadow-shade) ; 
+  }
+}
+
+@mixin under-shadow-from ($breakpoint, $guage, $shadow-shade: $shadow-color) {
+  @media screen and (min-width: $breakpoint) {
+    @include under-shadow($guage, $shadow-shade) ; 
+  }
+}
+
+@mixin centered-shadow($guage, $shadow-shade: $shadow-color) {
+  @if $guage == light {
+    box-shadow: 0px 0px 3px 2px $shadow-shade ;  
+  }
+  @else if $guage == medium {
+    box-shadow: 0px 0px 5px 4px $shadow-shade ;
+  }
+  @else if $guage == heavy {
+    box-shadow: 0px 0px 7px 6px $shadow-shade ;
+  }
+}
+
+@mixin up-shadow($guage, $shadow-shade: $shadow-color) {
+  @if $guage == light {
+    box-shadow: 0px -3px 3px 0px $shadow-shade ;  
+  }
+  @else if $guage == medium {
+    box-shadow: 0px -5px 5px 0px $shadow-shade ;
+  }
+  @else if $guage == heavy {
+    box-shadow: 0px -7px 7px 0px $shadow-shade ;
+  }
+}
+
+@mixin down-shadow($guage, $shadow-shade: $shadow-color) {
+  @if $guage == light {
+    box-shadow: 0px 3px 3px 0px $shadow-shade ;  
+  }
+  @else if $guage == medium {
+    box-shadow: 0px 5px 5px 0px $shadow-shade ;
+  }
+  @else if $guage == heavy {
+    box-shadow: 0px 7px 7px 0px $shadow-shade ;
+  }
+}
+
+@mixin centered-shadow-until ($breakpoint, $guage, $shadow-shade: $shadow-color) {
+  @media screen and (max-width: $breakpoint) {
+    @include centered-shadow($guage, $shadow-shade) ; 
+  }
+}
+
+@mixin centered-shadow-from ($breakpoint, $guage, $shadow-shade: $shadow-color) {
+  @media screen and (min-width: $breakpoint) {
+    @include centered-shadow($guage, $shadow-shade) ; 
+  }
+}
+
+
+//Underline Span
+@mixin underline-span($width, $height, $color) {
+        
+  display: inline-block;
+  position: relative;
+  padding-bottom: $space-lighter;
+      
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: $width;
+      background-color: $color;
+      height: $height;
+    }
+}

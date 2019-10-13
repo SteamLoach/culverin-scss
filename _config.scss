@@ -98,7 +98,10 @@ $outer-space-heavier: 4rem !default;
 $content-panel-x-pad: $outer-space-heavy !default;
 $content-panel-y-pad: $outer-space-heavy !default;
 
-/**Content Items**/
+/**Content Cards**/
+
+$is-card-shadowed: true;
+$is-card-rounded: true;
 
 /*Small*/
 $small-card-font-size: 0.8rem !default;

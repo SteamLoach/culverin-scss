@@ -10,7 +10,7 @@
   ///full width to accomodate background shading (passed by classExtensions)
   @include row(center, center);
   @include y-pad($content-panel-y-pad);
-  @include x-pad($content-panel-x-pad);
+  @include x-pad-from($tablet, $content-panel-x-pad);
 }
 
 %content-panel-title {
@@ -37,46 +37,5 @@
 }
 
 
-/****CARDS****/
-
-%small-card {
-  margin-bottom: $small-card-handheld-oneway-margin;
-    @incude oneway-margin-from($tablet, $small-card-desktop-oneway-margin);
-  padding: $small-card-outer-pad;
-  font-size: $small-card-font-size;
-  background-color: $page-background;
-  @include standard-transition(all);
-  
-  .card-title {
-    padding-top: $small-card-inner-pad;
-  }
-  
-  p, i, .card-title {
-    padding-bottom: $small-card-inner-pad;
-  } 
-  
-  &.is-shadowed {@include under-shadow();}
-  &.is-rounded {border-radius: $border-radius;}
-}
-
-%medium-card {
-  margin-bottom: $medium-card-handheld-oneway-margin;
-    @include oneway-margin-from($tablet, $medium-card-desktop-oneway-margin);
-  padding: $medium-card-outer-pad;
-  font-size: $medium-card-font-size;
-  background-color: $page-background;
-  @include standard-transition(all);
-  
-  .card-title {
-    padding-top: $medium-card-inner-pad;
-  }
-  
-  p, i, .card-title {
-    padding-bottom: $medium-card-inner-pad;
-  }
-  
-  &.is-shadowed {@include under-shadow();}
-  &.is-rounded {border-radius: $border-radius;}
-}
 
 

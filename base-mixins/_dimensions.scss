@@ -19,12 +19,24 @@
   }
 }
 
+@mixin column-scale($mobile-break: null, $fablet-break: null, $tablet-break: null, $laptop-break: null, $desktop-break: null) {
+  
+  @if $mobile-break != null {@include column($mobile-break)}
+  @if $fablet-break != null {@include column-break($fablet, $fablet-break)}
+  @if $tablet-break != null {@include column-break($tablet, $tablet-break)}
+  @if $laptop-break != null {@include column-break($laptop, $laptop-break)}
+  @if $desktop-break != null {@include column-break($desktop, $desktop-break)}
+  
+}
+
 //height mixin takes a breakpoint and a height value with a unit
 @mixin height-break($breakpoint, $height) {
   @media screen and (min-width: $breakpoint) {
     height: $height;
   }
 }
+
+
 
 /****MULTI ITEM ROWS****/
 

@@ -8,18 +8,19 @@
 @import './html-base' ;
 
 /****Mixins****/
-@import './mixins/theme' ;
-@import './mixins/backgrounds' ;
-@import './mixins/dimensions' ; 
-@import './mixins/position' ; 
-@import './mixins/containers' ; 
-@import './mixins/padding' ; 
-@import './mixins/margin' ; 
-@import './mixins/typography';
-@import './mixins/transitions';
+@import './base-mixins/theme' ;
+@import './base-mixins/backgrounds' ;
+@import './base-mixins/dimensions' ; 
+@import './base-mixins/position' ; 
+@import './base-mixins/containers' ; 
+@import './base-mixins/padding' ; 
+@import './base-mixins/margin' ; 
+@import './base-mixins/typography';
+@import './base-mixins/transitions';
 
 /****Components****/
 @import './components/minor-items';
 @import './components/content-panels';
+@import './components/content-cards';
 
 
