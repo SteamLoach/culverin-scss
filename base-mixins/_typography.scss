@@ -16,6 +16,22 @@
   }
 }
 
+@mixin font-size-scale(
+  $on-mobile: false,
+  $on-touch: false,
+  $on-fablet: false,
+  $on-tablet: false,
+  $on-laptop: false,
+  $on-desktop: false
+  ) {
+  @if $on-mobile {font-size:$on-mobile;}
+  @if $on-touch  {@include font-size-from($touch, $on-touch)}
+  @if $on-fablet {@include font-size-from($fablet, $on-fablet)}
+  @if $on-tablet {@include font-size-from($tablet, $on-tablet)}
+  @if $on-laptop {@include font-size-from($laptop, $on-laptop)}
+  @if $on-desktop{@include font-size-from($desktop, $on-desktop)}
+}
+
 /****Breakpoint Concious Line Height****/
 
 @mixin line-height-until ($breakpoint, $size) {

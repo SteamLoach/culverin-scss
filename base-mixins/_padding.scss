@@ -18,35 +18,13 @@
 
 @mixin pad-until($breakpoint, $dir, $val) {
   @media screen and (max-width: $breakpoint - 1px) {
-    @if $dir == top {
-      padding-top: $val;
-    }
-    @else if $dir == right {
-      padding-right: $val;
-    }
-    @else if $dir == bottom {
-      padding-bottom: $val;
-    }
-    @else if $dir == left {
-      padding-left: $val;
-    }
+    padding-#{$dir}: $val 
   }
 }
 
 @mixin pad-from($breakpoint, $dir, $val) {
   @media screen and (min-width: $breakpoint) {
-    @if $dir == top {
-      padding-top: $val;
-    }
-    @else if $dir == right {
-      padding-right: $val;
-    }
-    @else if $dir == bottom {
-      padding-bottom: $val;
-    }
-    @else if $dir == left {
-      padding-left: $val;
-    }
+    padding-#{$dir}: $val
   }
 }
 
@@ -132,4 +110,69 @@
     padding-left: $left;
     padding-bottom: $bottom; 
   }
+}
+
+@mixin pad-scale(
+  $dir,
+  $on-mobile: false,
+  $on-touch: false,
+  $on-fablet: false,
+  $on-tablet: false,
+  $on-laptop: false,
+  $on-desktop: false
+  ) {
+    @if $on-mobile {padding-#{$dir}: $on-mobile;}
+  @if $on-touch  {@include pad-from($touch, $dir, $on-touch)}
+  @if $on-fablet {@include pad-from($fablet, $dir, $on-fablet)}
+  @if $on-tablet {@include pad-from($tablet, $dir, $on-tablet)}
+  @if $on-laptop {@include pad-from($laptop, $dir, $on-laptop)}
+  @if $on-desktop{@include pad-from($desktop, $dir, $on-desktop)}
+}
+
+@mixin x-pad-scale(
+  $on-mobile: false,
+  $on-touch: false,
+  $on-fablet: false,
+  $on-tablet: false,
+  $on-laptop: false,
+  $on-desktop: false
+  ) {
+  @if $on-mobile {@include x-pad($on-mobile)}
+  @if $on-touch  {@include x-pad($touch, $on-touch)}
+  @if $on-fablet {@include x-pad($fablet, $on-fablet)}
+  @if $on-tablet {@include x-pad($tablet, $on-tablet)}
+  @if $on-laptop {@include x-pad($laptop, $on-laptop)}
+  @if $on-desktop{@include x-pad($desktop, $on-desktop)}
+}
+
+@mixin y-pad-scale(
+  $on-mobile: false,
+  $on-touch: false,
+  $on-fablet: false,
+  $on-tablet: false,
+  $on-laptop: false,
+  $on-desktop: false
+  ) {
+  @if $on-mobile {@include y-pad($on-mobile)}
+  @if $on-touch  {@include y-pad($touch, $on-touch)}
+  @if $on-fablet {@include y-pad($fablet, $on-fablet)}
+  @if $on-tablet {@include y-pad($tablet, $on-tablet)}
+  @if $on-laptop {@include y-pad($laptop, $on-laptop)}
+  @if $on-desktop{@include y-pad($desktop, $on-desktop)}
+}
+
+@mixin xy-pad-scale(
+  $on-mobile: false,
+  $on-touch: false,
+  $on-fablet: false,
+  $on-tablet: false,
+  $on-laptop: false,
+  $on-desktop: false
+  ) {
+  @if $on-mobile {padding:$on-mobile;}
+  @if $on-touch  {@include xy-pad-from($touch, $on-touch)}
+  @if $on-fablet {@include xy-pad-from($fablet, $on-fablet)}
+  @if $on-tablet {@include xy-pad-from($tablet, $on-tablet)}
+  @if $on-laptop {@include xy-pad-from($laptop, $on-laptop)}
+  @if $on-desktop{@include xy-pad-from($desktop, $on-desktop)}
 }

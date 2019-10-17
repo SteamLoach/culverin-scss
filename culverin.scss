@@ -2,7 +2,7 @@
 @import './variables' ;
 
 /****Config****/
-@import './config' ; 
+@import './config-base' ; 
 
 /****HTML Base****/
 @import './html-base' ;
@@ -19,6 +19,7 @@
 @import './base-mixins/transitions';
 
 /****Components****/
+@import './components/config-components' ;
 @import './components/minor-items';
 @import './components/content-panels';
 @import './components/content-cards';

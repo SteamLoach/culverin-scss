@@ -19,14 +19,20 @@
   }
 }
 
-@mixin column-scale($mobile-break: null, $fablet-break: null, $tablet-break: null, $laptop-break: null, $desktop-break: null) {
-  
-  @if $mobile-break != null {@include column($mobile-break)}
-  @if $fablet-break != null {@include column-break($fablet, $fablet-break)}
-  @if $tablet-break != null {@include column-break($tablet, $tablet-break)}
-  @if $laptop-break != null {@include column-break($laptop, $laptop-break)}
-  @if $desktop-break != null {@include column-break($desktop, $desktop-break)}
-  
+@mixin column-scale(
+  $on-mobile: false,
+  $on-touch: false,
+  $on-fablet: false,
+  $on-tablet: false,
+  $on-laptop: false,
+  $on-desktop: false
+  ) {
+  @if $on-mobile {@include column($on-mobile)}
+  @if $on-touch  {@include column-break($touch, $on-touch)}
+  @if $on-fablet {@include column-break($fablet, $on-fablet)}
+  @if $on-tablet {@include column-break($tablet, $on-tablet)}
+  @if $on-laptop {@include column-break($laptop, $on-laptop)}
+  @if $on-desktop{@include column-break($desktop, $on-desktop)}
 }
 
 //height mixin takes a breakpoint and a height value with a unit
@@ -36,23 +42,21 @@
   }
 }
 
-
-
-/****MULTI ITEM ROWS****/
-
-@mixin items-per-row($items) {
-  @include column(22);
-    @include column-break($fablet, 20);
-      @include column-break($tablet, 11);
-  
-  @if $items == 3 {
-        @include column-break($laptop, 7);
-  }  
-  
-  @if $items == 4 {
-        @include column-break($laptop, 7);
-          @include column-break($desktop, 5);
-  }
+@mixin height-scale(
+  $on-mobile: false,
+  $on-touch: false,
+  $on-fablet: false,
+  $on-tablet: false,
+  $on-laptop: false,
+  $on-desktop: false
+  ) {
+  @if $on-mobile {height: $on-mobile}
+  @if $on-touch  {@include height-break($touch, $on-touch)}
+  @if $on-fablet {@include height-break($fablet, $on-fablet)}
+  @if $on-tablet {@include height-break($tablet, $on-tablet)}
+  @if $on-laptop {@include height-break($laptop, $on-laptop)}
+  @if $on-desktop{@include height-break($desktop, $on-desktop)}
 }
+
 
 

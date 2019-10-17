@@ -1,0 +1,37 @@
+/////////////////////////////
+/********COMPONENTS********/
+///////////////////////////
+
+
+
+/****Content Panels****/
+$content-panel-x-pad: $outer-space-heavy !default;
+$content-panel-y-pad: $outer-space-heavy !default;
+
+
+
+/****Content Cards****/
+
+/**Card Options**/
+$is-card-shadowed: true;
+$is-card-rounded: true;
+$is-card-bordered: false;
+$is-card-centered: false;
+
+/*Small*/
+$small-card-font-size: 0.8rem !default;
+$small-card-outer-pad: $space-medium !default;
+$small-card-title-pad: $space-light !default;
+$small-card-inner-pad: $space-lighter !default;
+
+/*Medium*/
+$medium-card-font-size: 0.8rem !default;
+$medium-card-outer-pad: $space-heavy !default;
+$medium-card-title-pad: $space-medium !default;
+$medium-card-inner-pad: $space-light !default;
+
+/*Heavy*/
+$heavy-card-font-size: 0.8rem !default;
+$heavy-card-outer-pad: $space-heavier !default;
+$heavy-card-title-pad: $space-heavy !default;
+$heavy-card-inner-pad: $space-medium !default;

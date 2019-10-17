@@ -1,3 +1,16 @@
+//Transparent Colors
+@mixin opaque-black($opacity: $base-opacity) {
+  background-color: rgba(0,0,0,$opacity);
+}
+
+@mixin opaque-grey($opacity: $base-opacity) {
+  background-color: rgba(119, 116, 116,$opacity);
+}
+
+@mixin opaque-white($opacity: $base-opacity) {
+  background-color: rgba(255,255,255,$opacity);
+}
+
 //Shadows
 @mixin under-shadow($shadow-shade: $shadow-color) {
   box-shadow: 0 5px 20px -5px $shadow-shade;
@@ -65,7 +78,11 @@
 
 
 //Underline Span
-@mixin underline-span($width, $height, $color) {
+@mixin underline-span(
+  $width: 100%,
+  $height: $space-lightest,
+  $color: $brand-accent
+  ) {
         
   display: inline-block;
   position: relative;

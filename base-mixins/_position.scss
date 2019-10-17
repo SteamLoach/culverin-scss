@@ -132,15 +132,35 @@
   }
 }
 
-@mixin absolute-until($breakpoint) {
+@mixin absolute-until(
+  $breakpoint,
+  $top: false,
+  $right: false,
+  $bottom: false,
+  $left: false
+  ) {
   @media screen and (max-width: $breakpoint - 1px) {
     position: absolute;
+      @if $top {top: $top;}
+      @if $right {right: $right;}
+      @if $bottom {bottom: $bottom;}
+      @if $left {left: $left;}
   }
 }
 
-@mixin absolute-from($breakpoint) {
+@mixin absolute-from(
+  $breakpoint,
+  $top: false,
+  $right: false,
+  $bottom: false,
+  $left: false
+  ) {
   @media screen and (min-width: $breakpoint) {
     position: absolute;
+      @if $top {top: $top;}
+      @if $right {right: $right;}
+      @if $bottom {bottom: $bottom;}
+      @if $left {left: $left;}
   }
 }
 
@@ -159,4 +179,9 @@
     @media screen and (min-width: $breakpoint) {
       @include x-center-absolute();
   }
+}
+
+@mixin y-center-absolute() {
+  top: 50%;
+  transform: translate(0, -50%);
 }

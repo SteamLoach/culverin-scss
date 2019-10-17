@@ -22,8 +22,10 @@ $max-content-width: 1140px !default;
 
 //Borders & Shadow
 $shadow-color: $shade-darker !default;
-$border-color: $shade-darker !default;
 
+$border-color: $shade-darker !default;
+$border-width: 1px !default;
+$border-style: solid !default;
 $border-radius: 10px;
 
 //Titles
@@ -46,6 +48,8 @@ $brand-5: #06D6A0 !default;
 $brand-shade-1: #DEDFFE !default;
 $brand-shade-2: #DEDFFE !default;
 $brand-shade-3: #DEDFFE !default;
+
+$base-opacity: 0.6 !default;
 
 //CTAs
 $cta-color-1: $brand-2 !default;
@@ -73,49 +77,26 @@ $grid-columns: 24 !default; //alters the number of calculated 'width' columns
 /********SPACING********/
 
 /****Inner****/
+$space-lighter: 0.2rem !default;
 $space-lighter: 0.4rem !default;
 $space-light: 0.8rem !default;
 $space-medium: 1.2rem !default;
 $space-heavy: 1.6rem !default;
 $space-heavier: 2.4rem !default;
+$space-heaviest: 4rem !default;
 
 /****Outer****/
+$outer-space-lightest: 0.6rem !default;
 $outer-space-lighter: 0.8rem !default;
 $outer-space-light: 1.2rem !default;
 $outer-space-medium: 1.8rem !default;
 $outer-space-heavy: 2.6rem !default;
 $outer-space-heavier: 4rem !default;
+$outer-space-heaviest: 8rem !default;
 
 
-//////////////////////////////////////////////
-//////////////////////////////////////////////
-//////////////////////////////////////////////
 
 
-/********COMPONENTS********/
-
-/****Content Panels****/
-$content-panel-x-pad: $outer-space-heavy !default;
-$content-panel-y-pad: $outer-space-heavy !default;
-
-/**Content Cards**/
-
-$is-card-shadowed: true;
-$is-card-rounded: true;
-
-/*Small*/
-$small-card-font-size: 0.8rem !default;
-$small-card-handheld-oneway-margin: $outer-space-lighter !default;
-$small-card-desktop-oneway-margin: $outer-space-medium !default;
-$small-card-outer-pad: $space-medium !default;
-$small-card-inner-pad: $space-lighter !default;
-
-/*Medium*/
-$medium-card-font-size: 0.8rem !default;
-$medium-card-handheld-oneway-margin: $outer-space-light !default;
-$medium-card-desktop-oneway-margin: $outer-space-heavy !default;
-$medium-card-outer-pad: $space-heavy !default;
-$medium-card-inner-pad: $space-light !default;
 
 
 

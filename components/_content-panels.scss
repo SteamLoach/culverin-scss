@@ -29,10 +29,11 @@
     }
 }
 
-%content-item-wrapper {
+%content-panel-inner {
   //'inner' wrapper to hold content items - adheres to max width variable
   @include container(around, start);
   @include align-c(stretch);
+  width: 100%;
   max-width: $max-content-width;
 }
 
