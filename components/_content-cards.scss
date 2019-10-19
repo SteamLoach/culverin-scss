@@ -2,14 +2,22 @@
 /****CARDS****/
 
 //Base
-@mixin card-children($outer-pad, $title-pad, $inner-pad) {
-  svg {margin-bottom: $inner-pad;}
-  h1, h2, h3, h4, h5, h6 {
-    width: 100%;
-    padding-bottom: $outer-pad;
-    
-  }
+@mixin card-config(
+  $outer-pad,
+  $inner-pad,
+  $title-pad,
+  $card-font-size) {
   
+  padding: $outer-pad;
+  font-size: $card-font-size;
+    
+    
+  //Children  
+  svg {margin-bottom: $inner-pad;}
+  h1, h2, h3, h4, h5, h6 {width: 100%;}
+  h1, h2, {padding-bottom: $title-pad;}
+  h3, h4, h5, h6 {padding-bottom: $inner-pad;}
+    
   p {padding-bottom: $inner-pad;}
   
   label {
@@ -21,81 +29,30 @@
 }
 
 
-////
-@mixin light-card(
-  $is-shadowed: $is-card-shadowed,
-  $is-rounded: $is-card-rounded,
-  $is-bordered: $is-card-bordered,
-  $is-centered: $is-card-centered
+//CONTENT CARD
+@mixin content-card (
+  $type,
+    $is-shadowed: $is-card-shadowed,
+    $is-rounded: $is-card-rounded,
+    $is-bordered: $is-card-bordered,
+    $is-centered: $is-card-centered,
+    $has-background: $card-background,
+    $has-color: $card-color,
+    $has-transition: $is-card-transition
   ) {
-  //Padding
-  padding: $light-card-outer-pad;
-  @include card-children(
-    $light-card-outer-pad,
-    $light-card-title-pad,
-    $light-card-inner-pad
-  );
-  
-  //Style
-  font-size: $light-card-font-size;
-  background-color: $page-background;
-  @include standard-transition(all);
-  
-  //Options
-  @if $is-shadowed {@include under-shadow();}
-  @if $is-rounded {border-radius: $border-radius;}
-  @if $is-bordered {border: $border-width $border-style $border-color}
-  @if $is-centered {text-align: center;} 
-}
+    
+    //Config
+    @if $type == light {@include card-config($light-card-config...);}
+    @if $type == medium {@include card-config($medium-card-config...)}
+    @if $type == heavy {@include card-config($heavy-card-config...)}
+    
+    //Options
+    background-color: $has-background;
+    color: $has-color;
+    @if $is-shadowed {@include under-shadow();}
+    @if $is-rounded {border-radius: $border-radius;}
+    @if $is-bordered {border: $border-width $border-style $border-color}
+    @if $is-centered {text-align: center;}
+    @if $has-transition {@include standard-transition(all);}
+  }
 
-@mixin medium-card(
-  $is-shadowed: $is-card-shadowed,
-  $is-rounded: $is-card-rounded,
-  $is-bordered: $is-card-bordered,
-  $is-centered: $is-card-centered
-  ) {
-  //Padding
-  padding: $medium-card-outer-pad;
-  @include card-children(
-    $medium-card-outer-pad,
-    $medium-card-title-pad,
-    $medium-card-inner-pad
-  );
-  
-  //Style
-  font-size: $medium-card-font-size;
-  background-color: $page-background;
-  @include standard-transition(all);
-  
-  //Options
-  @if $is-shadowed {@include under-shadow();}
-  @if $is-rounded {border-radius: $border-radius;}
-  @if $is-bordered {border: $border-width $border-style $border-color}
-  @if $is-centered {text-align: center;}
-}
-
-@mixin heavy-card(
-  $is-shadowed: $is-card-shadowed,
-  $is-rounded: $is-card-rounded,
-  $is-bordered: $is-card-bordered,
-  $is-centered: $is-card-centered
-  ) {
-  //Padding
-  padding: $heavy-card-outer-pad;
-  @include card-children(
-    $heavy-card-outer-pad,
-    $heavy-card-title-pad,
-    $heavy-card-inner-pad
-  );
-  
-  //Style
-  font-size: $heavy-card-font-size;
-  background-color: $page-background;
-  @include standard-transition(all);
-  
-  //Options
-  @if $is-shadowed {@include under-shadow();}
-  @if $is-rounded {border-radius: $border-radius;}
-  @if $is-bordered {border: $border-width, $border-style, $border-color}
-  @if $is-centered {text-align: center;}
-}

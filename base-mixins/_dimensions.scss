@@ -20,16 +20,17 @@
 }
 
 @mixin column-scale(
-  $on-mobile: false,
-  $on-touch: false,
-  $on-fablet: false,
+  $default: false,
+  $on-lrg-mobile: false,
+  $on-phablet: false,
   $on-tablet: false,
   $on-laptop: false,
   $on-desktop: false
-  ) {
-  @if $on-mobile {@include column($on-mobile)}
-  @if $on-touch  {@include column-break($touch, $on-touch)}
-  @if $on-fablet {@include column-break($fablet, $on-fablet)}
+  ) {    
+  
+  @if $default {@include column($default)}
+  @if $on-lrg-mobile  {@include column-break($lrg-mobile, $on-lrg-mobile)}
+  @if $on-phablet {@include column-break($phablet, $on-phablet)}
   @if $on-tablet {@include column-break($tablet, $on-tablet)}
   @if $on-laptop {@include column-break($laptop, $on-laptop)}
   @if $on-desktop{@include column-break($desktop, $on-desktop)}
@@ -43,16 +44,16 @@
 }
 
 @mixin height-scale(
-  $on-mobile: false,
-  $on-touch: false,
-  $on-fablet: false,
+  $default: false,
+  $on-lrg-mobile: false,
+  $on-phablet: false,
   $on-tablet: false,
   $on-laptop: false,
   $on-desktop: false
   ) {
-  @if $on-mobile {height: $on-mobile}
-  @if $on-touch  {@include height-break($touch, $on-touch)}
-  @if $on-fablet {@include height-break($fablet, $on-fablet)}
+  @if $default {height: $default}
+  @if $on-lrg-mobile  {@include height-break($lrg-mobile, $on-lrg-mobile)}
+  @if $on-phablet {@include height-break($phablet, $on-phablet)}
   @if $on-tablet {@include height-break($tablet, $on-tablet)}
   @if $on-laptop {@include height-break($laptop, $on-laptop)}
   @if $on-desktop{@include height-break($desktop, $on-desktop)}

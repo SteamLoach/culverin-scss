@@ -123,67 +123,50 @@
   }
 }
 
-@mixin margin-scale(
+@mixin margin-scale (
   $dir,
-  $on-mobile: false,
-  $on-touch: false,
-  $on-fablet: false,
-  $on-tablet: false,
-  $on-laptop: false,
-  $on-desktop: false
+    $default: false,
+    $on-lrg-mobile: false,
+    $on-phablet: false, 
+    $on-tablet: false,
+    $on-laptop: false,
+    $on-desktop: false,
   ) {
-    @if $on-mobile {margin-#{$dir}: $on-mobile;}
-  @if $on-touch  {@include margin-from($touch, $dir, $on-touch)}
-  @if $on-fablet {@include margin-from($fablet, $dir, $on-fablet)}
-  @if $on-tablet {@include margin-from($tablet, $dir, $on-tablet)}
-  @if $on-laptop {@include margin-from($laptop, $dir, $on-laptop)}
-  @if $on-desktop{@include margin-from($desktop, $dir, $on-desktop)}
-}
-
-@mixin x-margin-scale(
-  $on-mobile: false,
-  $on-touch: false,
-  $on-fablet: false,
-  $on-tablet: false,
-  $on-laptop: false,
-  $on-desktop: false
-  ) {
-  @if $on-mobile {@include x-margin($on-mobile)}
-  @if $on-touch  {@include x-margin-from($touch, $on-touch)}
-  @if $on-fablet {@include x-margin-from($fablet, $on-fablet)}
-  @if $on-tablet {@include x-margin-from($tablet, $on-tablet)}
-  @if $on-laptop {@include x-margin-from($laptop, $on-laptop)}
-  @if $on-desktop{@include x-margin-from($desktop, $on-desktop)}
-}
-
-@mixin y-margin-scale(
-  $on-mobile: false,
-  $on-touch: false,
-  $on-fablet: false,
-  $on-tablet: false,
-  $on-laptop: false,
-  $on-desktop: false
-  ) {
-  @if $on-mobile {@include y-margin($on-mobile)}
-  @if $on-touch  {@include y-margin-from($touch, $on-touch)}
-  @if $on-fablet {@include y-margin-from($fablet, $on-fablet)}
-  @if $on-tablet {@include y-margin-from($tablet, $on-tablet)}
-  @if $on-laptop {@include y-margin-from($laptop, $on-laptop)}
-  @if $on-desktop{@include y-margin-from($desktop, $on-desktop)}
-}
-
-@mixin xy-margin-scale(
-  $on-mobile: false,
-  $on-touch: false,
-  $on-fablet: false,
-  $on-tablet: false,
-  $on-laptop: false,
-  $on-desktop: false
-  ) {
-  @if $on-mobile {margin:$on-mobile;}
-  @if $on-touch  {@include xy-margin-from($touch, $on-touch)}
-  @if $on-fablet {@include xy-margin-from($fablet, $on-fablet)}
-  @if $on-tablet {@include xy-margin-from($tablet, $on-tablet)}
-  @if $on-laptop {@include xy-margin-from($laptop, $on-laptop)}
-  @if $on-desktop{@include xy-margin-from($desktop, $on-desktop)}
+    
+  $scale: (
+    1: $on-lrg-mobile,
+    2: $on-phablet,
+    3: $on-tablet,
+    4: $on-laptop,
+    5: $on-desktop
+  );
+    
+  @if $default {
+    @if $dir == x {@include x-margin($default);}
+    @else if $dir == y {@include y-margin($default);}
+    @else if $dir == xy {@include xy-margin($default);}
+    @else {margin-#{$dir}: $default;}
+  }
+        
+  @each $key, $val in $scale {
+    
+    @if $val {
+      
+      @if $dir == x {
+        @include x-margin-from(nth($breakpoints, $key), $val);
+      }
+      
+      @else if $dir == y {
+        @include y-margin-from(nth($breakpoints, $key), $val);          
+      }
+      
+      @else if $dir == xy {
+        @include xy-margin-from(nth($breakpoints, $key), $val);          
+      }
+      
+      @else {
+        @include margin-from(nth($breakpoints, $key), $dir, $val);
+      }
+    }
+  } 
 }
