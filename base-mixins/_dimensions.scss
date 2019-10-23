@@ -3,7 +3,7 @@
 ************************************/
 
 //Column based mixins take an integer between one and the value of $grid-columns
-//(see config partial) and return a percentage value
+//(see config-base partial) and return a percentage value
 @mixin column($column) {width: 100%/$grid-columns * $column;}
 
 @mixin column-break($breakpoint, $column) {

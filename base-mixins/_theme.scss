@@ -13,6 +13,7 @@
 
 //Shadows
 @mixin under-shadow($shadow-shade: $shadow-color) {
+  -webkit-box-shadow: 0 5px 20px -5px $shadow-shade;
   box-shadow: 0 5px 20px -5px $shadow-shade;
 }
 
@@ -30,36 +31,45 @@
 
 @mixin centered-shadow($guage, $shadow-shade: $shadow-color) {
   @if $guage == light {
+    -webkit-box-shadow: 0px 0px 3px 2px $shadow-shade ;
     box-shadow: 0px 0px 3px 2px $shadow-shade ;  
   }
   @else if $guage == medium {
+    -webkit-box-shadow: 0px 0px 5px 4px $shadow-shade ;
     box-shadow: 0px 0px 5px 4px $shadow-shade ;
   }
   @else if $guage == heavy {
+    -webkit-box-shadow: 0px 0px 7px 6px $shadow-shade ;
     box-shadow: 0px 0px 7px 6px $shadow-shade ;
   }
 }
 
 @mixin up-shadow($guage, $shadow-shade: $shadow-color) {
   @if $guage == light {
+    -webkit-box-shadow: 0px -3px 3px 0px $shadow-shade ;
     box-shadow: 0px -3px 3px 0px $shadow-shade ;  
   }
   @else if $guage == medium {
+    -webkit-box-shadow: 0px -5px 5px 0px $shadow-shade ;
     box-shadow: 0px -5px 5px 0px $shadow-shade ;
   }
   @else if $guage == heavy {
+    -webkit-box-shadow: 0px -7px 7px 0px $shadow-shade ;
     box-shadow: 0px -7px 7px 0px $shadow-shade ;
   }
 }
 
 @mixin down-shadow($guage, $shadow-shade: $shadow-color) {
   @if $guage == light {
+    -webkit-box-shadow: 0px 3px 3px 0px $shadow-shade ;
     box-shadow: 0px 3px 3px 0px $shadow-shade ;  
   }
   @else if $guage == medium {
+    -webkit-box-shadow: 0px 5px 5px 0px $shadow-shade ;
     box-shadow: 0px 5px 5px 0px $shadow-shade ;
   }
   @else if $guage == heavy {
+    -webkit-box-shadow: 0px 7px 7px 0px $shadow-shade ;
     box-shadow: 0px 7px 7px 0px $shadow-shade ;
   }
 }

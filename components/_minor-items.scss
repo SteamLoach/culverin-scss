@@ -17,5 +17,19 @@
 }
 
 
+%icon-beside-text {
+  @include wrapper(start, center);
+  
+  p, a {@include column(18);}
+  
+  svg {
+    height: 30px;
+    width: 30px;
+    padding-right: $space-lighter;
+  }
+  
+}
+
+
 
 

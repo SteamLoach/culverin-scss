@@ -2,23 +2,34 @@
 /********COMPONENTS********/
 ///////////////////////////
 
+/****Responsive Nav****/
+$responsive-nav-hide-from: $laptop !default;
+$responsive-nav-column-width: 20 !default;
+$responsive-nav-full-height: true !default;
+$responsive-nav-scrolls-from: right !default;
+$responsive-nav-align-text: center !default;
+$responsive-nav-has-background: $page-background !default;
 
 
 /****Content Panels****/
 $content-panel-x-pad: $outer-space-heavy !default;
 $content-panel-y-pad: $outer-space-heavy !default;
-
+$content-panel-justify: around !default;
+$content-panel-align: stretch !default;
+$content-panel-align-content: center !default;
+$content-panel-is-full-width: false !default;
+$content-panel-format-children: false !default;
 
 /****Content Cards****/
 
 /**Card Options**/
-$is-card-shadowed: true !default;
-$is-card-rounded: true !default;
-$is-card-bordered: false !default;
-$is-card-centered: false !default;
+$card-is-shadowed: true !default;
+$card-is-rounded: true !default;
+$card-is-bordered: false !default;
+$card-is-centered: false !default;
 $card-background: $page-background !default;
 $card-color: $font-color !default;
-$is-card-transition: true !default;
+$card-transition: true !default;
 
 /*Small*/
 $light-card-font-size: 0.8rem !default;

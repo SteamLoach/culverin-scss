@@ -133,7 +133,7 @@
   @if $default {
     @if $dir == x {@include x-pad($default);}
     @else if $dir == y {@include y-pad($default);}
-    @else if $dir == xy {@include xy-pad($default);}
+    @else if $dir == xy {@include x-pad($default); @include y-pad($default);}
     @else {padding-#{$dir}: $default;}
   }
         

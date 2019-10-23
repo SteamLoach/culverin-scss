@@ -1,4 +1,3 @@
-
 /****CARDS****/
 
 //Base
@@ -11,34 +10,35 @@
   padding: $outer-pad;
   font-size: $card-font-size;
     
-    
-  //Children  
+  //Children    
   svg {margin-bottom: $inner-pad;}
-  h1, h2, h3, h4, h5, h6 {width: 100%;}
+  h1, h2, h3 {width: 100%;}
   h1, h2, {padding-bottom: $title-pad;}
   h3, h4, h5, h6 {padding-bottom: $inner-pad;}
     
   p {padding-bottom: $inner-pad;}
   
-  label {
-    padding-bottom: $space-lighter;}
-  input:not([type="submit"]), textarea {
+  label {padding-bottom: $space-lighter;}
+  
+  input:not([type="submit"]),
+  textarea {
     padding: $space-lighter;
     margin-bottom: $inner-pad;
   }
+    
 }
 
 
 //CONTENT CARD
 @mixin content-card (
   $type,
-    $is-shadowed: $is-card-shadowed,
-    $is-rounded: $is-card-rounded,
-    $is-bordered: $is-card-bordered,
-    $is-centered: $is-card-centered,
+    $is-shadowed: $card-is-shadowed,
+    $is-rounded: $card-is-rounded,
+    $is-bordered: $card-is-bordered,
+    $is-centered: $card-is-centered,
     $has-background: $card-background,
     $has-color: $card-color,
-    $has-transition: $is-card-transition
+    $has-transition: $card-transition
   ) {
     
     //Config

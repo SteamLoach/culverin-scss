@@ -1,0 +1,107 @@
+@mixin responsive-nav(
+  $is-hidden-from: $responsive-nav-hide-from,
+  $is-column-width: $responsive-nav-column-width,
+  $is-full-height: $responsive-nav-full-height,
+  $scroll-from: $responsive-nav-scrolls-from,
+  $is-text-aligned: $responsive-nav-align-text,
+  $has-background: $responsive-nav-has-background
+) {
+  
+/***
+  <nav class="responsive-nav"
+       :class="state">
+    
+    <div class="responsive-nav-inner">
+      <div v-for="link in navLinks"
+           :key="link.id"
+           @click="responsiveNavClose"
+           class="responsive-nav-link">
+        <nuxt-link :to="link.route"> {{link.title}} </nuxt-link>
+      </div>
+    </div>
+  
+  </nav>  
+***/
+  
+  position: absolute;
+    top: 0;
+    #{$scroll-from}: -100%;
+      &.is-active {#{$scroll-from}: 0;}
+  
+  overflow-y: scroll;
+  @include column($is-column-width);
+  @include hidden-from($is-hidden-from);
+  @if $is-full-height {height: 100vh;}
+  
+  text-align: $is-text-aligned;  
+  background-color: $has-background;
+  @include standard-transition($scroll-from);
+  transition-timing-function: linear;
+  
+  .responsive-nav-inner {
+    width: 100%;
+  }
+}
+
+
+@mixin responsive-nav-toggle() {
+
+/***
+  <div class="nav-toggle-wrapper"
+       :class="state"
+       @click="responsiveNavToggle">
+    <div class="nav-toggle"
+         :class="state"></div>
+  </div>
+***/
+  
+  %burger-bar {
+    background-color: $brand-1;
+    height: 5px;
+    width: 50px;
+    border-radius: 15px;
+    transition-property: background-color, transform;
+    transition-duration: $transition-duration;
+    transition-timing-function: ease;
+  }
+  
+    @include hidden-from($responsive-nav-hide-from);
+    z-index: 999;
+    overflow: visible;
+    padding: 15px 10px 35px 10px;
+    margin-left: auto;
+    
+    &:hover {
+      cursor: pointer;
+    }
+
+  .nav-toggle {
+    @extend %burger-bar;
+    position: relative;
+    
+    &:before, &:after {
+      @extend %burger-bar;
+      display: inline-block;
+      content: "";
+      position: absolute;
+ 
+    }
+    &:before {
+      top: 10px
+    }
+    &:after {
+      top: 20px
+    }
+  }
+  .nav-toggle.is-active { 
+    transform: translate(0px, 10px) rotate(-135deg);
+    
+    &:before {
+      transform: scale(0) translate(0px, -20px) rotate(-270deg);
+    }
+    &:after {
+      transform: translate(0px, -20px) rotate(270deg);
+    }
+  }
+}
+
