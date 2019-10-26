@@ -19,10 +19,16 @@
 @import './base-mixins/transitions';
 
 /****Components****/
-@import './components/config-components' ;
 @import './components/minor-items';
-@import './components/responsive-nav';
-@import './components/content-panels';
-@import './components/content-cards';
+
+
+/**Primary Navigation**/
+@import './components/primary-navigation/config-primary-nav';
+@import './components/primary-navigation/primary-navigation';
+
+
+@import './components/content-components/config-content-components' ;
+@import './components/content-components/content-panels';
+@import './components/content-components/content-cards';
 
 

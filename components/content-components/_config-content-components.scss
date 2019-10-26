@@ -1,14 +1,6 @@
 /////////////////////////////
-/********COMPONENTS********/
+/****CONTENT COMPONENTS****/
 ///////////////////////////
-
-/****Responsive Nav****/
-$responsive-nav-hide-from: $laptop !default;
-$responsive-nav-column-width: 20 !default;
-$responsive-nav-full-height: true !default;
-$responsive-nav-scrolls-from: right !default;
-$responsive-nav-align-text: center !default;
-$responsive-nav-has-background: $page-background !default;
 
 
 /****Content Panels****/
@@ -17,8 +9,9 @@ $content-panel-y-pad: $outer-space-heavy !default;
 $content-panel-justify: around !default;
 $content-panel-align: stretch !default;
 $content-panel-align-content: center !default;
-$content-panel-is-full-width: false !default;
-$content-panel-format-children: false !default;
+$content-panel-custom-width: false !default;
+$content-panel-is-opinionated: false !default;
+$content-panel-has-background: $page-background;
 
 /****Content Cards****/
 

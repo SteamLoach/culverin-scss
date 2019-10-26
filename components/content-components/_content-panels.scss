@@ -1,3 +1,32 @@
+@mixin typography-styling() {
+  
+  p + h2, p + header h2, p + h3, p + h4,
+  ul + h2, ul + header h2, ul + h3, ul + h4,
+  ol + h2, ol + header h2, ol + h3, ol + h4, 
+  table + h2, table + header h2, table + h3, table + h4,
+  blockquote + h2, blockquote + header h2, blockquote + h3, blockquote + h4,
+  form + h2, form + header h2, form + h3, form + h4 {
+    margin-top: $outer-space-heavy;
+  }
+  h1 {margin-bottom: $large-title-pad}
+  h2 {margin-bottom: $large-title-pad}
+  h3 {margin-bottom: $medium-title-pad}
+  h4 {margin-bottom: $medium-title-pad}
+  h5 {margin-bottom: $small-title-pad}
+  h6 {margin-bottom: $small-title-pad}
+
+  ul, ol, p {padding-left: $space-lightest; margin-bottom: $text-pad;}
+  ul, ol {@include x-margin($list-indent); @include x-pad-from($tablet, $list-indent);}
+  li {margin-bottom: $list-item-pad;}
+  
+  a {
+    color: $link-color;
+    &:hover {text-decoration: underline;}
+  }
+  
+}
+
+
 /****PANELS****/
 
 %content-panel-wrapper {
@@ -11,39 +40,24 @@
   $justify-items: $content-panel-justify,
   $align-items: $content-panel-align,
   $align-content: $content-panel-align-content,
-  $is-full-width: $content-panel-is-full-width,
-  $format-children: $content-panel-format-children,
+  $has-own-width: $content-panel-custom-width,
+  $is-opinionated: $content-panel-is-opinionated,
+  $has-background: $content-panel-has-background,
 ) {
   
   @include row(center, center);
   @include y-pad($content-panel-y-pad);
   @include x-pad-from($tablet, $content-panel-x-pad);
-  
+  background-color: $has-background;
   
   .content-panel-inner {
     @include row($justify-items, $align-items);
     @include align-c($align-content);
+    max-width: $max-content-width;
     
-    @if $is-full-width != true {max-width: $max-content-width}; 
+    @if $is-opinionated {@include typography-styling();}
+    @if $has-own-width {max-width: $has-own-width}; 
     
-    @if $format-children {
-      h1 {@include y-pad($large-title-pad);}
-      h2 {@include y-pad($large-title-pad);}
-      h3 {@include y-pad($medium-title-pad);}
-      h4 {@include y-pad($medium-title-pad);}
-      h5 {@include y-pad($small-title-pad);}
-      h6 {@include y-pad($small-title-pad);}
-
-      ul, p {padding-left: $space-lightest; padding-bottom: $text-pad;}
-      ul {@include x-margin($list-indent); @include x-pad($list-indent);}
-      li {padding-bottom: $list-item-pad;}
-      
-      a {
-        color: $link-color;
-        &:hover {text-decoration: underline;}
-      }
-      
-    }
   }
 }
 

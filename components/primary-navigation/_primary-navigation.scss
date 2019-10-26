@@ -1,0 +1,220 @@
+@mixin primary-navigation(
+  $justify-items: $primary-nav-justify,
+  $align-items: $primary-nav-align,
+  $has-font-family: $nav-font-family,
+  $has-font-color: $nav-font-color,
+  $has-transition: $primary-nav-has-transition,
+  $has-link-column: $primary-nav-link-column,
+  $has-link-font-size: $nav-link-font-size, 
+  $has-link-y-pad: $nav-link-y-pad,
+  $has-link-active-color: $nav-link-active-color,
+) {
+
+  @include row($justify-items, $align-items);
+  font-family: $has-font-family;
+  color: $has-font-color;
+  @if $has-transition {@include standard-transition(all);}
+    
+  .nav-link-wrapper {
+    @include hidden-until($nav-handheld-until);
+    @include wrapper(center, center);
+    @include column($has-link-column);
+    text-align: center;
+    
+    .nav-link {
+      flex: 1;
+      font-size: $has-link-font-size;
+      
+      a {
+        width: 100%;
+        @include y-pad($has-link-y-pad);
+        &:hover {
+          cursor: pointer;
+        }
+        
+        &.nuxt-link-exact-active {
+          color: $has-link-active-color
+        }
+      }
+    }
+  }
+}
+
+@mixin handheld-navigation(
+  $is-column-width: $handheld-nav-column-width,
+  $is-full-height: $handheld-nav-full-height,
+  $scroll-from: $handheld-nav-scrolls-from,
+  $is-text-aligned: $handheld-nav-align-text,
+  $has-background: $handheld-nav-has-background
+) {
+  z-index: 9999;  
+  position: absolute;
+    top: 0;
+    #{$scroll-from}: -100%;
+      &.is-active {#{$scroll-from}: 0;}
+  
+  overflow-y: scroll;
+  @include column($is-column-width);
+  @include hidden-from($nav-handheld-until);
+  
+  @if $is-full-height {height: 100vh;}
+  
+  text-align: $is-text-aligned;  
+  background-color: $has-background;
+  @include standard-transition($scroll-from);
+  transition-timing-function: linear;
+  
+  .handheld-navigation-inner {
+    width: 100%;
+  }
+  
+  .handheld-navigation-toggle {
+    @include y-margin($space-lighter);
+  }
+  
+  .nav-toggle-icon {
+    
+    text-align: left;
+    margin-left: auto;
+    transform: translate(0px, 10px) rotate(-135deg);
+    
+    &:before {transform: scale(0) translate(0px, -20px) rotate(-270deg);}
+    &:after {transform: translate(0px, -20px) rotate(270deg);}
+  }
+}
+
+@mixin handheld-navigation-toggle() {
+    
+    %burger-bar {
+    background-color: $nav-font-color;
+    height: 5px;
+    width: 50px;
+    border-radius: 15px;
+    }
+  
+    @include hidden-from($nav-handheld-until);
+    overflow: visible;
+    padding: 15px 10px 35px 10px;
+    
+    &:hover {
+      cursor: pointer;
+    }
+
+  .nav-toggle-icon {
+    @extend %burger-bar;
+    position: relative;
+    
+    &:before, &:after {
+      @extend %burger-bar;
+      display: inline-block;
+      content: "";
+      position: absolute;
+ 
+    }
+    &:before {top: 10px}
+    &:after {top: 20px}
+    
+  }
+  
+  .nav-toggle.is-active { 
+    transform: translate(0px, 10px) rotate(-135deg);
+    
+    &:before {
+      transform: scale(0) translate(0px, -20px) rotate(-270deg);
+    }
+    &:after {
+      transform: translate(0px, -20px) rotate(270deg);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+/****DEPRECIATE THIS****/
+@mixin responsive-nav(
+  $is-hidden-from: $nav-handheld-until,
+  $is-column-width: $handheld-nav-column-width,
+  $is-full-height: $handheld-nav-full-height,
+  $scroll-from: $handheld-nav-scrolls-from,
+  $is-text-aligned: $handheld-nav-align-text,
+  $has-background: $handheld-nav-has-background
+) {
+    
+  position: absolute;
+    top: 0;
+    #{$scroll-from}: -100%;
+      &.is-active {#{$scroll-from}: 0;}
+  
+  overflow-y: scroll;
+  @include column($is-column-width);
+  @include hidden-from($is-hidden-from);
+  
+  @if $is-full-height {height: 100vh;}
+  
+  text-align: $is-text-aligned;  
+  background-color: $has-background;
+  @include standard-transition($scroll-from);
+  transition-timing-function: linear;
+  
+  .responsive-nav-inner {
+    width: 100%;
+  }
+}
+
+@mixin responsive-nav-toggle() {
+  
+  %burger-bar {
+    background-color: $brand-1;
+    height: 5px;
+    width: 50px;
+    border-radius: 15px;
+    transition-property: background-color, transform;
+    transition-duration: $transition-duration;
+    transition-timing-function: ease;
+  }
+  
+    @include hidden-from($nav-handheld-until);
+    z-index: 999;
+    overflow: visible;
+    padding: 15px 10px 35px 10px;
+    margin-left: auto;
+    
+    &:hover {
+      cursor: pointer;
+    }
+
+  .nav-toggle {
+    @extend %burger-bar;
+    position: relative;
+    
+    &:before, &:after {
+      @extend %burger-bar;
+      display: inline-block;
+      content: "";
+      position: absolute;
+ 
+    }
+    &:before {
+      top: 10px
+    }
+    &:after {
+      top: 20px
+    }
+  }
+  .nav-toggle.is-active { 
+    transform: translate(0px, 10px) rotate(-135deg);
+    
+    &:before {
+      transform: scale(0) translate(0px, -20px) rotate(-270deg);
+    }
+    &:after {
+      transform: translate(0px, -20px) rotate(270deg);
+    }
+  }
+}
+

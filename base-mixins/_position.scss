@@ -148,6 +148,23 @@
   }
 }
 
+@mixin position-from(
+  $breakpoint,
+  $position,
+  $top: false,
+  $right: false,
+  $bottom: false,
+  $left: false
+  ) {
+  @media screen and (min-width: $breakpoint) {
+    position: $position;
+      @if $top {top: $top;}
+      @if $right {right: $right;}
+      @if $bottom {bottom: $bottom;}
+      @if $left {left: $left;}
+  }
+}
+
 @mixin absolute-from(
   $breakpoint,
   $top: false,
