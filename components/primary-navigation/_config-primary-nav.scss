@@ -8,6 +8,7 @@ $nav-font-color: $brand-1 !default;
 $nav-link-font-size: 1.2rem !default;
 $nav-link-y-pad: $space-light !default;
 $nav-link-active-color: $brand-2 !default;
+$nav-toggle-icon-size: 1.8rem !default;
 
 /****Primary Navigation****/
 
@@ -15,6 +16,7 @@ $primary-nav-justify: between !default;
 $primary-nav-align: center !default;
 $primary-nav-link-column: 16 !default;
 $primary-nav-has-transition: true !default;
+$primary-nav-has-background: $page-background !default;
 
 /****Handheld Navigation****/
 $handheld-nav-column-width: 20 !default;
