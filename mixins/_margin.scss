@@ -14,6 +14,10 @@
   margin-bottom: $margin;
 }
 
+@mixin xy-margin($margin) {
+  margin: $margin;
+}
+
 /****Breakpoint Concious****/
 
 @mixin margin-until($breakpoint, $dir, $val) {
@@ -60,6 +64,13 @@
 
 @mixin y-margin-between($start, $end, $margin) {
   @media screen and (min-width: $start) and (max-width: $end - 1px) {
+    @include y-margin($margin) ; 
+  }
+}
+
+@mixin xy-margin-from($breakpoint, $margin) {
+  @media screen and (min-width: $breakpoint) {
+    @include x-margin($margin) ; 
     @include y-margin($margin) ; 
   }
 }

@@ -1,5 +1,0 @@
-@mixin standard-transition($prop) {
-  transition-property: $prop;
-  transition-duration: $transition-duration;
-  transition-timing-function: ease-in-out;
-}

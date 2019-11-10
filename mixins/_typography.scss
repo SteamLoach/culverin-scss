@@ -2,6 +2,35 @@
 ***********TYPOGRAPHY****************
 ************************************/
 
+/****Standard Typography Flow Format****/
+%standard-flow {
+  
+  p + h2, p + header h2, p + h3, p + h4,
+  ul + h2, ul + header h2, ul + h3, ul + h4,
+  ol + h2, ol + header h2, ol + h3, ol + h4, 
+  table + h2, table + header h2, table + h3, table + h4,
+  blockquote + h2, blockquote + header h2, blockquote + h3, blockquote + h4,
+  form + h2, form + header h2, form + h3, form + h4 {
+    margin-top: $outer-space-heavy;
+  }
+  h1 {margin-bottom: $large-title-pad}
+  h2 {margin-bottom: $large-title-pad}
+  h3 {margin-bottom: $medium-title-pad}
+  h4 {margin-bottom: $medium-title-pad}
+  h5 {margin-bottom: $small-title-pad}
+  h6 {margin-bottom: $small-title-pad}
+
+  ul, ol, p {padding-left: $space-lightest; margin-bottom: $text-pad;}
+  ul, ol {@include x-margin($list-indent); @include x-pad-from($tablet, $list-indent);}
+  li {margin-bottom: $list-item-pad;}
+  
+  a {
+    color: $link-color;
+    &:hover {text-decoration: underline;}
+  }
+}
+
+
 /****Breakpoint Concious Font Size****/
 
 @mixin font-size-until ($breakpoint, $size) {

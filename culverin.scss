@@ -2,32 +2,23 @@
 @import './variables' ;
 
 /****Config****/
-@import './config-base' ; 
-
-/****HTML Base****/
-@import './html-base' ;
+@import './defaults' ; 
 
 /****Mixins****/
-@import './base-mixins/theme' ;
-@import './base-mixins/backgrounds' ;
-@import './base-mixins/dimensions' ; 
-@import './base-mixins/position' ; 
-@import './base-mixins/containers' ; 
-@import './base-mixins/padding' ; 
-@import './base-mixins/margin' ; 
-@import './base-mixins/typography';
-@import './base-mixins/transitions';
+@import './mixins/theme' ;
+@import './mixins/backgrounds' ;
+@import './mixins/dimensions' ; 
+@import './mixins/position' ; 
+@import './mixins/containers' ; 
+@import './mixins/padding' ; 
+@import './mixins/margin' ; 
+@import './mixins/typography';
+@import './mixins/transitions';
 
 /****Components****/
-@import './components/minor-items';
+@import './components/minor-components/cta';
 
-
-/**Primary Navigation**/
-@import './components/primary-navigation/config-primary-nav';
-@import './components/primary-navigation/primary-navigation';
-
-
-@import './components/content-components/config-content-components' ;
+@import './components/content-components/content-component-defaults' ;
 @import './components/content-components/content-panels';
 @import './components/content-components/content-cards';
 
