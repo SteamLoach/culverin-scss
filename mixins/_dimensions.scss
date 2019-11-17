@@ -43,6 +43,23 @@
   }
 }
 
+@mixin custom-scale(
+  $default: false,
+  $on-lrg-mobile: false,
+  $on-phablet: false,
+  $on-tablet: false,
+  $on-laptop: false,
+  $on-desktop: false
+  ) {    
+  
+  @if $default {width: $default}
+  @if $on-lrg-mobile  {@include custom-break($lrg-mobile, $on-lrg-mobile)}
+  @if $on-phablet {@include custom-break($phablet, $on-phablet)}
+  @if $on-tablet {@include custom-break($tablet, $on-tablet)}
+  @if $on-laptop {@include custom-break($laptop, $on-laptop)}
+  @if $on-desktop{@include custom-break($desktop, $on-desktop)}
+}
+
 @mixin height-scale(
   $default: false,
   $on-lrg-mobile: false,

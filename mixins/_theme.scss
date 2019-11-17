@@ -1,3 +1,29 @@
+//Borders
+
+@mixin border-until(
+  $breakpoint,
+  $dir: false,
+  $style: $standard-border
+  ) {
+    @media screen and (max-width: $breakpoint - 1px) {
+      @if $dir {border-#{$dir}: $style}
+      @else {border: $style;}
+  } 
+}
+
+@mixin border-from(
+  $breakpoint,
+  $dir: false,
+  $style: $standard-border
+  ) {
+    @media screen and (min-width: $breakpoint) {
+      @if $dir {border-#{$dir}: $style}
+      @else {border: $style;}
+  } 
+}
+
+
+
 //Transparent Colors
 @mixin opaque-black($opacity: $base-opacity) {
   background-color: rgba(0,0,0,$opacity);

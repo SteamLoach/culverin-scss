@@ -11,7 +11,7 @@
   table + h2, table + header h2, table + h3, table + h4,
   blockquote + h2, blockquote + header h2, blockquote + h3, blockquote + h4,
   form + h2, form + header h2, form + h3, form + h4 {
-    margin-top: $outer-space-heavy;
+    margin-top: $outer-space-medium;
   }
   h1 {margin-bottom: $large-title-pad}
   h2 {margin-bottom: $large-title-pad}
@@ -23,6 +23,8 @@
   ul, ol, p {padding-left: $space-lightest; margin-bottom: $text-pad;}
   ul, ol {@include x-margin($list-indent); @include x-pad-from($tablet, $list-indent);}
   li {margin-bottom: $list-item-pad;}
+  
+  img {@include y-margin($medium-title-pad)}
   
   a {
     color: $link-color;
@@ -46,14 +48,14 @@
 }
 
 @mixin font-size-scale(
-  $on-mobile: false,
+  $default: false,
   $on-touch: false,
   $on-fablet: false,
   $on-tablet: false,
   $on-laptop: false,
   $on-desktop: false
   ) {
-  @if $on-mobile {font-size:$on-mobile;}
+  @if $default {font-size:$default;}
   @if $on-touch  {@include font-size-from($touch, $on-touch)}
   @if $on-fablet {@include font-size-from($fablet, $on-fablet)}
   @if $on-tablet {@include font-size-from($tablet, $on-tablet)}

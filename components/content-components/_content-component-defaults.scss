@@ -28,7 +28,7 @@ $card-transition: true !default;
 $light-card-font-size: 0.8rem !default;
 $light-card-outer-pad: $space-medium !default;
 $light-card-title-pad: $space-light !default;
-$light-card-inner-pad: $space-lighter !default;
+$light-card-inner-pad: $space-light !default;
 
 $light-card-config: (
   'outer-pad': $light-card-outer-pad,
@@ -41,7 +41,7 @@ $light-card-config: (
 $medium-card-font-size: 0.8rem !default;
 $medium-card-outer-pad: $space-heavy !default;
 $medium-card-title-pad: $space-medium !default;
-$medium-card-inner-pad: $space-light !default;
+$medium-card-inner-pad: $space-medium !default;
 
 $medium-card-config: (
   'outer-pad': $medium-card-outer-pad,
@@ -54,7 +54,7 @@ $medium-card-config: (
 $heavy-card-font-size: 0.8rem !default;
 $heavy-card-outer-pad: $space-heavier !default;
 $heavy-card-title-pad: $space-heavy !default;
-$heavy-card-inner-pad: $space-medium !default;
+$heavy-card-inner-pad: $space-heavy !default;
 
 $heavy-card-config: (
   'outer-pad': $heavy-card-outer-pad,

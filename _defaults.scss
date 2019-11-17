@@ -42,7 +42,7 @@ $h3-size: 1.2rem !default;
 
 ////Standard Flow Extension
 //Title Flow
-$large-title-pad: $space-heavy !default;
+$large-title-pad: $space-medium !default;
 $medium-title-pad: $space-medium !default;
 $small-title-pad: $space-light !default;
 //Text Flow
@@ -60,9 +60,7 @@ $max-content-width: 1140px !default;
 //Borders & Shadow
 $shadow-color: $shade-darker !default;
 
-$border-color: $shade-darker !default;
-$border-width: 1px !default;
-$border-style: solid !default;
+$standard-border: 2px solid $brand-1 !default;
 $border-radius: 10px;
 
 //CTAs
