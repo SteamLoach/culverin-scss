@@ -4,6 +4,6 @@
   $function: ease-in-out
   ) {
   transition-property: $props;
-  transition-duration: $transition-duration;
+  transition-duration: $duration;
   transition-timing-function: $function;
 }

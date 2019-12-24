@@ -1,0 +1,45 @@
+@mixin card (
+    $has-outer-pad: $card-outer-pad,
+    $has-inner-pad: $card-inner-pad,
+    $has-title-pad: $card-title-pad,
+    $has-font-size: $card-font-size,
+    $has-shadow: $card-shadow,
+    $has-border-radius: $card-border-radius,
+    $has-border: $card-border,
+    $is-centered: $card-is-centered,
+    $has-background: $card-background,
+    $has-font-color: $card-font-color,
+    $has-font-size: $card-font-size,
+    $has-transition: $card-transition
+  ) {
+    
+    //Config
+    padding: $has-outer-pad;
+    font-size: $has-font-size;
+    
+  //Children    
+    svg {margin-bottom: $has-inner-pad;}
+    h1, h2, h3 {width: 100%;}
+    h1, h2, h3, h4 {padding-bottom: $has-title-pad;}
+    h5, h6 {padding-bottom: $has-inner-pad;}
+    
+    p {padding-bottom: $has-inner-pad; }
+  
+    label {padding-bottom: $space-lighter;}
+  
+    input:not([type="submit"]),
+    textarea {
+      padding: $space-lighter;
+      margin-bottom: $has-inner-pad;
+    }
+    
+    //Options
+    background-color: $has-background;
+    color: $has-font-color;
+    @if $has-shadow {@include shadow($has-shadow);}
+    @if $has-border-radius {border-radius: $has-border-radius;}
+    @if $has-border {border: $has-border}
+    @if $is-centered {text-align: center;}
+    @if $has-transition {@include standard-transition(all);}
+}
+

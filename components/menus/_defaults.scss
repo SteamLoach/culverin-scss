@@ -1,0 +1,15 @@
+$inline-menu-justify: around !default;
+$inline-menu-link-width: 100% !default;
+$inline-menu-link-flex: false !default;
+$inline-menu-link-pad: $space-light !default;
+$inline-menu-link-align: center !default;
+$inline-menu-link-size: 1.2rem !default;
+$inline-menu-link-color: $font-color !default;
+
+$column-menu-list-style: none !default;
+$column-menu-link-width: auto !default;
+$column-menu-link-pad: $space-lightest !default;
+$column-menu-link-align: center !default;
+$column-menu-link-size: 1.2rem !default;
+$column-menu-link-color: $font-color !default;
+$column-menu-elements: (a, p, span) !default;

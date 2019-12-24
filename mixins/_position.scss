@@ -1,8 +1,6 @@
-/*************************************
-***********POSITION******************
-************************************/
+////POSITION////
 
-/****Base****/
+//Base//
 
 @mixin justify($val) {
   
@@ -66,7 +64,7 @@
     }
 }
 
-/****XY****/
+//XY//
 
 @mixin xy-center() {
   -webkit-box-pack: center;
@@ -91,9 +89,9 @@
 }
 
 
-/****Breakpoint Concious****/
+///Breakpoint Concious///
 
-/****Justify****/
+///Justify///
 @mixin x-until($breakpoint, $val) {
   @media screen and (max-width: $breakpoint - 1px) {
     @include justify($val) ; 
@@ -106,7 +104,7 @@
   }
 }
 
-/****Align Items****/
+///Align Items///
 @mixin y-until($breakpoint, $val) {
   @media screen and (max-width: $breakpoint - 1px) {
     @include align($val) ; 
@@ -181,37 +179,6 @@
   }
 }
 
-@mixin absolute-until(
-  $breakpoint,
-  $top: false,
-  $right: false,
-  $bottom: false,
-  $left: false
-  ) {
-  @media screen and (max-width: $breakpoint - 1px) {
-    position: absolute;
-      @if $top {top: $top;}
-      @if $right {right: $right;}
-      @if $bottom {bottom: $bottom;}
-      @if $left {left: $left;}
-  }
-}
-
-@mixin absolute-from(
-  $breakpoint,
-  $top: false,
-  $right: false,
-  $bottom: false,
-  $left: false
-  ) {
-  @media screen and (min-width: $breakpoint) {
-    position: absolute;
-      @if $top {top: $top;}
-      @if $right {right: $right;}
-      @if $bottom {bottom: $bottom;}
-      @if $left {left: $left;}
-  }
-}
 
 @mixin x-center-absolute() {
   left: 50%;
@@ -233,4 +200,16 @@
 @mixin y-center-absolute() {
   top: 50%;
   transform: translate(0, -50%);
+}
+
+@mixin y-center-absolute-until($breakpoint) {
+    @media screen and (max-width: $breakpoint  - 1px) {
+      @include y-center-absolute();
+  }
+}
+
+@mixin y-center-absolute-from($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
+      @include y-center-absolute();
+  }
 }

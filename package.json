@@ -1,0 +1,22 @@
+{
+  "name": "culverin-scss",
+  "version": "1.1.0",
+  "description": "SCSS library for small projects with a focus on streamlining responsive design.",
+  "main": "culverin.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SteamLoach/culverin-scss.git"
+  },
+  "keywords": [
+    "scss"
+  ],
+  "author": "SteamLoach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SteamLoach/culverin-scss/issues"
+  },
+  "homepage": "https://github.com/SteamLoach/culverin-scss#readme"
+}

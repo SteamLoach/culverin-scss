@@ -1,4 +1,4 @@
-/********SHADING********/
+/////////SHADING/////////
 
 $shade-darkest: hsl(0, 0%, 21%) !default; 
 $shade-darker: hsl(0, 0%, 29%) !default; 
@@ -9,9 +9,12 @@ $shade-lighter: hsl(0, 0%, 96%) !default;
 $shade-lightest: hsl(0, 0%, 98%) !default;
 $shade-white: hsl(0, 0%, 100%) !default; 
 
-/********SPACING********/
+$base-brand-shading: 0.2 !default;
+$base-opacity: 0.6 !default;
 
-/****Inner****/
+/////////SPACING/////////
+
+/////Inner/////
 $space-lightest: 0.2rem !default;
 $space-lighter: 0.4rem !default;
 $space-light: 0.8rem !default;
@@ -20,7 +23,7 @@ $space-heavy: 1.6rem !default;
 $space-heavier: 2.4rem !default;
 $space-heaviest: 4rem !default;
 
-/****Outer****/
+/////Outer/////
 $outer-space-lightest: 0.6rem !default;
 $outer-space-lighter: 0.8rem !default;
 $outer-space-light: 1.2rem !default;

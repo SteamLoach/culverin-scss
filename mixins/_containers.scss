@@ -1,9 +1,7 @@
-/*************************************
-***********CONTAINERS****************
-************************************/
+////CONTAINERS////
 
 
-/****Base****/
+//Base//
 
 %row {
   position: relative;
@@ -11,14 +9,20 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
-@mixin row($x, $y) {
+@mixin row(
+  $x, $y,
+  $yc: stretch,
+  $no-wrap: false
+  ) {
   @extend %row;
   @include justify($x) ; 
-  @include align($y) ; 
+  @include align($y) ;
+  @include align-c($yc) ;
+  @if $no-wrap {-ms-flex-wrap: nowrap;flex-wrap: nowrap}
 }
 
 
@@ -31,10 +35,16 @@
   flex-wrap: wrap;
 }
 
-@mixin container($x, $y) {
+@mixin container(
+  $x, $y,
+  $yc: stretch,
+  $no-wrap: false
+  ) {
   @extend %container;
   @include justify($x) ; 
-  @include align($y) ; 
+  @include align($y) ;
+  @include align-c($yc);
+  @if $no-wrap {-ms-flex-wrap: nowrap;flex-wrap: nowrap}
 }
 
 
@@ -46,15 +56,21 @@
   flex-wrap: wrap;
 }
 
-@mixin wrapper($x, $y) {
+@mixin wrapper(
+  $x, $y,
+  $yc: stretch,
+  $no-wrap: false
+  ) {
   @extend %wrapper;
   @include justify($x) ; 
   @include align($y) ;
+  @include align-c($yc);
+  @if $no-wrap {-ms-flex-wrap: nowrap;flex-wrap: nowrap}
 }
 
-/****Breakpoint Concious****/
 
-/****Hide Element****/
+
+/////Hide Element/////
 @mixin hidden-until ($breakpoint) {
   @media screen and (max-width: $breakpoint - 1px) {
     display: none;
@@ -67,8 +83,14 @@
   }
 }
 
+@mixin hidden-between ($start, $end) {
+  @media screen and (min-width: $start) and (max-width: $end - 1px) {
+    display: none;
+  }
+}
 
-/****Prevent Wrapping****/
+
+/////Prevent Wrapping/////
 @mixin nowrap-until($breakpoint) {
   @media screen and (max-width: $breakpoint - 1px) {
     -ms-flex-wrap: nowrap; flex-wrap: nowrap;
@@ -81,8 +103,14 @@
   }
 }
 
+@mixin nowrap-between ($start, $end) {
+  @media screen and (min-width: $start) and (max-width: $end - 1px) {
+    -ms-flex-wrap: nowrap;flex-wrap: nowrap;
+  }
+}
 
-/****Allow Wrapping****/
+
+/////Allow Wrapping/////
 @mixin can-wrap-until($breakpoint) {
   @media screen and (max-width: $breakpoint - 1px) {
     -ms-flex-wrap: wrap;flex-wrap: wrap;
@@ -91,6 +119,12 @@
 
 @mixin can-wrap-from($breakpoint) {
   @media screen and (min-width: $breakpoint) {
+    -ms-flex-wrap: wrap; flex-wrap: wrap;
+  }
+}
+
+@mixin canwrap-between ($start, $end) {
+  @media screen and (min-width: $start) and (max-width: $end - 1px) {
     -ms-flex-wrap: wrap; flex-wrap: wrap;
   }
 }

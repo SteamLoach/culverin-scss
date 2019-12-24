@@ -1,10 +1,11 @@
-/****Supporting Variables****/
+/////Supporting Variables/////
 @import './variables' ;
 
-/****Config****/
+/////Config/////
 @import './defaults' ; 
 
-/****Mixins****/
+/////Mixins/////
+@import './mixins/html-base' ;
 @import './mixins/theme' ;
 @import './mixins/backgrounds' ;
 @import './mixins/dimensions' ; 
@@ -15,11 +16,16 @@
 @import './mixins/typography';
 @import './mixins/transitions';
 
-/****Components****/
-@import './components/minor-components/cta';
+/////Components/////
 
-@import './components/content-components/content-component-defaults' ;
-@import './components/content-components/content-panels';
-@import './components/content-components/content-cards';
+//Cards
+@import './components/content-cards/defaults' ;
+@import './components/content-cards/content-cards';
 
+//Menus
+@import './components/menus/defaults' ;
+@import './components/menus/menus';
 
+//Modals
+@import './components/modals/defaults' ;
+@import './components/modals/modals';

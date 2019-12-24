@@ -1,9 +1,7 @@
-/*************************************
-***********TYPOGRAPHY****************
-************************************/
+////TYPOGRAPHY////
 
-/****Standard Typography Flow Format****/
-%standard-flow {
+/////Standard Typography Flow Format/////
+@mixin standard-flow() {
   
   p + h2, p + header h2, p + h3, p + h4,
   ul + h2, ul + header h2, ul + h3, ul + h4,
@@ -24,7 +22,14 @@
   ul, ol {@include x-margin($list-indent); @include x-pad-from($tablet, $list-indent);}
   li {margin-bottom: $list-item-pad;}
   
-  img {@include y-margin($medium-title-pad)}
+  img {
+    @include column-scale(
+      $default: 22,
+      $on-laptop: 18,
+    );
+    @include x-margin(auto);
+    @include y-margin($medium-title-pad);
+  }
   
   a {
     color: $link-color;
@@ -33,7 +38,7 @@
 }
 
 
-/****Breakpoint Concious Font Size****/
+/////Breakpoint Concious Font Size/////
 
 @mixin font-size-until ($breakpoint, $size) {
   @media screen and (max-width: $breakpoint - 1px) {
@@ -47,23 +52,29 @@
   }
 }
 
+@mixin font-size-between($start, $end, $size) {
+  @media screen and (min-width: $start) and (max-width: $end - 1px) {
+    font-size: $size;
+  }
+}
+
 @mixin font-size-scale(
   $default: false,
   $on-touch: false,
-  $on-fablet: false,
+  $on-phablet: false,
   $on-tablet: false,
   $on-laptop: false,
   $on-desktop: false
   ) {
   @if $default {font-size:$default;}
   @if $on-touch  {@include font-size-from($touch, $on-touch)}
-  @if $on-fablet {@include font-size-from($fablet, $on-fablet)}
+  @if $on-phablet {@include font-size-from($phablet, $on-phablet)}
   @if $on-tablet {@include font-size-from($tablet, $on-tablet)}
   @if $on-laptop {@include font-size-from($laptop, $on-laptop)}
   @if $on-desktop{@include font-size-from($desktop, $on-desktop)}
 }
 
-/****Breakpoint Concious Line Height****/
+/////Breakpoint Concious Line Height/////
 
 @mixin line-height-until ($breakpoint, $size) {
   @media screen and (max-width: $breakpoint - 1px) {
@@ -77,7 +88,13 @@
   }
 }
 
-/****Breakpoint Concious Font Weight****/
+@mixin line-height-between($start, $end, $size) {
+  @media screen and (min-width: $start) and (max-width: $end - 1px) {
+    line-height: $size;
+  }
+}
+
+/////Breakpoint Concious Font Weight/////
 
 @mixin font-weight-until ($breakpoint, $weight) {
   @media screen and (max-width: $breakpoint - 1px) {
@@ -91,7 +108,13 @@
   }
 }
 
-/****Breakpoint Concious Alignment****/
+@mixin font-weight-between($start, $end, $size) {
+  @media screen and (min-width: $start) and (max-width: $end - 1px) {
+    font-weight: $size;
+  }
+}
+
+/////Breakpoint Concious Alignment/////
 
 @mixin text-align-until ($breakpoint, $alignment) {
   @media screen and (max-width: $breakpoint - 1px) {
@@ -112,6 +135,23 @@
 
 @mixin text-align-from ($breakpoint, $alignment) {
   @media screen and (min-width: $breakpoint) {
+    @if $alignment == left {
+      text-align: left;
+    }
+    @else if $alignment == right {
+      text-align: right;
+    }
+    @else if $alignment == center {
+      text-align: center;
+    }
+    @else if $alignment == justify {
+      text-align: justify;
+    }
+  }
+}
+
+@mixin text-align-between ($start, $end, $alignment) {
+  @media screen and (min-width: $start) and (max-width: $end - 1px) {
     @if $alignment == left {
       text-align: left;
     }

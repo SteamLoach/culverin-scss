@@ -1,6 +1,4 @@
-/*************************************
-***********WIDTH & HEIGHT************
-************************************/
+////WIDTH & HEIGHT////
 
 //Column based mixins take an integer between one and the value of $grid-columns
 //(see config-base partial) and return a percentage value
@@ -19,6 +17,7 @@
   }
 }
 
+
 @mixin column-scale(
   $default: false,
   $on-lrg-mobile: false,
@@ -34,13 +33,6 @@
   @if $on-tablet {@include column-break($tablet, $on-tablet)}
   @if $on-laptop {@include column-break($laptop, $on-laptop)}
   @if $on-desktop{@include column-break($desktop, $on-desktop)}
-}
-
-//height mixin takes a breakpoint and a height value with a unit
-@mixin height-break($breakpoint, $height) {
-  @media screen and (min-width: $breakpoint) {
-    height: $height;
-  }
 }
 
 @mixin custom-scale(
@@ -60,6 +52,13 @@
   @if $on-desktop{@include custom-break($desktop, $on-desktop)}
 }
 
+//height mixin takes a breakpoint and a height value with a unit
+@mixin height-break($breakpoint, $height) {
+  @media screen and (min-width: $breakpoint) {
+    height: $height;
+  }
+}
+
 @mixin height-scale(
   $default: false,
   $on-lrg-mobile: false,
@@ -77,4 +76,27 @@
 }
 
 
+
+@mixin xy-size ($x, $y: false){
+  @if $y {width: $x; height: $y}
+  @else {width: $x; height: $x}
+}
+
+@mixin xy-size-until($breakpoint, $set-x, $set-y: false) {
+  @media screen and (max-width: $breakpoint - 1px) {
+    @include xy-size($set-x, $set-y) ;
+  }
+}
+
+@mixin xy-size-from($breakpoint, $set-x, $set-y: false) {
+  @media screen and (min-width: $breakpoint) {
+    @include xy-size($set-x, $set-y);
+  }
+}
+
+@mixin xy-size-between($breakpoint, $set-x, $set-y: false) {
+  @media screen and (min-width: $start) and (max-width: $end - 1px) {
+    @include xy-size($set-x, $set-y); 
+  }
+}
 

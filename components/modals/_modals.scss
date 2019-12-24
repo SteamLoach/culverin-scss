@@ -1,0 +1,40 @@
+@mixin slide-in-modal(
+  $in-from: $slide-in-modal-from,
+  $has-z-index: $slide-in-modal-z-index,
+  $has-overflow: $slide-in-modal-overflow,
+  $has-height: $slide-in-modal-height,
+  ) {
+    z-index: $has-z-index;
+    overflow-y: $has-overflow;
+    position: fixed;
+      top: 0;
+      #{$in-from}: -100%;
+    height: $has-height;
+    
+    &.is-active {
+      #{$in-from}: 0;
+    } 
+}
+
+
+@mixin fullscreen-overlay($has-shade: $fullscreen-overlay-shade) {
+  z-index: 999;
+  overflow: hidden;
+  position: fixed;
+    top: 0;
+    left: 0;
+  @include xy-size(0%);
+  opacity: 0;
+  background-color: $has-shade;
+  
+  &.is-active {
+    @include xy-size(100%);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+

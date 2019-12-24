@@ -1,0 +1,18 @@
+@mixin html-base() {
+  
+  font-family: $primary-font;
+  font-size: $root-font-size;
+  line-height: $root-line-height;
+  color: $font-color;
+  //Page Background
+  background-color: $page-background;
+    
+  //header sizing, colouring etc
+  h1, h2, h3,
+  h4, h5, h6, {
+    font-family: $secondary-font;
+    color: $title-font-color;
+    line-height: $title-line-height;
+  }
+}
+

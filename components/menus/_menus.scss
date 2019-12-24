@@ -1,0 +1,50 @@
+
+@mixin inline-menu(
+  $justify: $inline-menu-justify,
+  $link-width: $inline-menu-link-width,
+  $link-pad: $inline-menu-link-pad,
+  $link-align: $inline-menu-link-align,
+  $link-size: $inline-menu-link-size,
+  $link-color: $inline-menu-link-color,
+  $link-flex: $inline-menu-link-flex,
+  
+  ) {
+  @include wrapper($justify, center);
+    li {
+      @if $link-flex {flex: $link-flex;}
+    }
+    
+    a {
+      width: $link-width;
+      @include y-pad($link-pad);
+      font-size: $link-size;
+      text-align: $link-align;
+      color: $link-color;
+    }
+  }
+
+
+
+@mixin column-menu(
+  $list-style: $column-menu-list-style,
+  $link-width: $column-menu-link-width,
+  $link-pad: $column-menu-link-pad,
+  $link-align: $column-menu-link-align,
+  $link-size: $column-menu-link-size,
+  $link-color: $column-menu-link-color,
+  $link-elements: $column-menu-elements
+  
+  ) {
+    
+    list-style: $list-style;
+    text-align: $link-align;
+    
+    #{$link-elements} {
+      width: $link-width;
+      @include y-pad($link-pad);
+      font-size: $link-size;
+      color: $link-color;
+
+    }
+    
+} 

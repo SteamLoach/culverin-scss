@@ -1,23 +1,21 @@
-////THEME///
+////Coloring///
 
 //Brand
 $brand-1: #23395B !default;
-$brand-shade-1: rgba($brand-1, 0.2) !default;
+$brand-shade-1: rgba($brand-1, $base-brand-shading) !default;
 
 $brand-accent: #D81E5B !default;
-$brand-shade-accent: rgba($brand-accent, 0.2) !default;
+$brand-shade-accent: rgba($brand-accent, $base-brand-shading) !default;
 
 $brand-offset: #B9E3C6 !default;
-$brand-shade-offset: rgba($brand-offset, 0.2) !default;
+$brand-shade-offset: rgba($brand-offset, $base-brand-shading) !default;
 
 $brand-2: #59C9A5 !default;
-$brand-shade-2: rgba($brand-2, 0.2) !default;
+$brand-shade-2: rgba($brand-2, $base-brand-shading) !default;
 
 $brand-3: #FFFD98 !default;
-$brand-shade-3: rgba($brand-3, 0.2) !default;
+$brand-shade-3: rgba($brand-3, $base-brand-shading) !default;
  
-$base-opacity: 0.6 !default;
-
 ////Typography////
 
 //Fonts
@@ -33,14 +31,16 @@ $offset-font-color: $shade-lighter !default;
 $link-color: $brand-2 !default;
 
 //Titles
-$title-color: $shade-darkest !default;
+$title-font-family: $secondary-font !default;
+$title-font-color: $shade-darkest !default;
 $title-line-height: 1.2 !default;
 
 $h1-size: 2.2rem !default;
 $h2-size: 1.4rem !default;
 $h3-size: 1.2rem !default;
 
-////Standard Flow Extension
+
+////Standard Flow Mixin
 //Title Flow
 $large-title-pad: $space-medium !default;
 $medium-title-pad: $space-medium !default;
@@ -55,13 +55,21 @@ $list-item-pad: $space-lighter !default;
 
 //Base
 $page-background: #EDF7F6 !default;
-$max-content-width: 1140px !default;
+
+$narrow-content-width: 768px !default;
+$standard-content-width: 1140px !default;
+$wide-content-width: 1348px !default;
 
 //Borders & Shadow
-$shadow-color: $shade-darker !default;
+$shadow-color: $shade-dark !default;
+$under-shadow: 0px 6px 20px -6px !default;
+$centered-shadow: 0px 0px 6px 6px !default;
+$up-shadow: 0px -4px 4px 0px !default;
+$down-shadow: 0px 4px 4px 0px !default;
+
 
 $standard-border: 2px solid $brand-1 !default;
-$border-radius: 10px;
+$border-radius: 10px !default;
 
 //CTAs
 $cta-color-1: $brand-2 !default;
@@ -69,7 +77,16 @@ $cta-color-2: $brand-3 !default;
 $cta-border-radius: 25px !default;
 
 //Transitions
-$transition-duration: 0.3s;
+$transition-duration: 0.3s !default;
+
+//Pseudo Span
+$pseudo-span-position: bottom !default;
+$pseudo-span-width: 100% !default;
+$pseudo-span-height: $space-lightest !default;
+$pseudo-span-spacing: $space-lighter !default;
+$pseudo-span-fill: $brand-accent !default;
+$pseudo-span-centered: false !default;
+$pseudo-span-on-hover: false !default;
 
 
 ////BREAKPOINTS////
@@ -88,7 +105,7 @@ $breakpoints: (
   $desktop
 );
 
-/********COLUMNS********/
+////COLUMNS////
 
 $grid-columns: 24 !default; //alters the number of calculated 'width' columns
 

@@ -1,0 +1,54 @@
+////CONTENT CARDS////
+
+///Card Options///
+$card-shadow: $under-shadow !default;
+$card-border-radius: $border-radius !default;
+$card-border: false !default;
+$card-is-centered: false !default;
+$card-background: $page-background !default;
+$card-font-color: $font-color !default;
+$card-transition: true !default;
+//Custom Card Defaults
+$card-font-size: 0.8rem !default;
+$card-outer-pad: $space-heavy;
+$card-inner-pad: $space-medium;
+$card-title-pad: $space-medium;
+
+//Small//
+$light-card-font-size: 0.8rem !default;
+$light-card-outer-pad: $space-medium !default;
+$light-card-title-pad: $space-light !default;
+$light-card-inner-pad: $space-light !default;
+
+$light-card: (
+  'has-outer-pad': $light-card-outer-pad,
+  'has-inner-pad': $light-card-inner-pad,
+  'has-title-pad': $light-card-title-pad,
+  'has-font-size': $light-card-font-size
+);
+
+//Medium//
+$medium-card-font-size: 0.8rem !default;
+$medium-card-outer-pad: $space-heavy !default;
+$medium-card-title-pad: $space-medium !default;
+$medium-card-inner-pad: $space-medium !default;
+
+$medium-card: (
+  'has-outer-pad': $medium-card-outer-pad,
+  'has-inner-pad': $medium-card-inner-pad,
+  'has-title-pad': $medium-card-title-pad,
+  'has-font-size': $medium-card-font-size
+);
+
+//Heavy//
+$heavy-card-font-size: 0.8rem !default;
+$heavy-card-outer-pad: $space-heavier !default;
+$heavy-card-title-pad: $space-heavy !default;
+$heavy-card-inner-pad: $space-heavy !default;
+
+$heavy-card: (
+  'has-outer-pad': $heavy-card-outer-pad,
+  'has-inner-pad': $heavy-card-inner-pad,
+  'has-title-pad': $heavy-card-title-pad,
+  'has-font-size': $heavy-card-font-size
+);

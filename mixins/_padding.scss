@@ -1,8 +1,6 @@
-/*************************************
-***********PADDING*******************
-************************************/
+////PADDING////
 
-/****Defaults****/
+/////Defaults/////
 
 @mixin x-pad($pad) {
   padding-left: $pad;
@@ -14,17 +12,23 @@
   padding-bottom: $pad;
 }
 
-/****Breakpoint Concious****/
+/////Breakpoint Concious/////
 
-@mixin pad-until($breakpoint, $dir, $val) {
+@mixin single-pad-until($breakpoint, $dir, $val) {
   @media screen and (max-width: $breakpoint - 1px) {
     padding-#{$dir}: $val 
   }
 }
 
-@mixin pad-from($breakpoint, $dir, $val) {
+@mixin single-pad-from($breakpoint, $dir, $val) {
   @media screen and (min-width: $breakpoint) {
     padding-#{$dir}: $val
+  }
+}
+
+@mixin single-pad-between($start, $end, $dir, $val) {
+  @media screen and (min-width: $start) and (max-width: $end - 1px) {
+    padding-#{$dir}: $val;
   }
 }
 
@@ -85,30 +89,70 @@
   }
 }
 
-@mixin custom-pad-until($breakpoint, $top, $right, $bottom, $left) {
+
+@mixin pad(
+  $xy: false,
+  $x: false, 
+  $y: false,
+  $top: false,
+  $right: false,
+  $bottom: false,
+  $left: false,
+  )  {
+
+  @if $xy {padding: $xy;}
+  @if $x {@include x-pad($x)} 
+  @if $y {@include y-pad($y)}
+  @if $top {padding-top: $top}
+  @if $right {padding-right: $right}
+  @if $bottom {padding-bottom: $bottom}
+  @if $left {padding-left: $left}
+
+}
+
+@mixin pad-until(
+  $breakpoint,
+  $xy: false,
+  $x: false, 
+  $y: false,
+  $top: false,
+  $right: false,
+  $bottom: false,
+  $left: false,
+  ) {
   @media screen and (max-width: $breakpoint - 1px) {
-    padding-top: $top;
-    padding-right: $right;
-    padding-left: $left;
-    padding-bottom: $bottom;
+    @include pad($xy,$x,$y,$top,$right,$bottom,$left);
   }
 }
 
-@mixin custom-pad-from($breakpoint, $top, $right, $bottom, $left) {
+@mixin pad-from(
+  $breakpoint,
+  $xy: false,
+  $x: false, 
+  $y: false,
+  $top: false,
+  $right: false,
+  $bottom: false,
+  $left: false,
+  ) {
   @media screen and (min-width: $breakpoint) {
-    padding-top: $top;
-    padding-right: $right;
-    padding-left: $left;
-    padding-bottom: $bottom;
+    @include pad($xy,$x,$y,$top,$right,$bottom,$left);
   }
 }
 
-@mixin custom-pad-between($start, $end, $top, $right, $bottom, $left) {
+@mixin pad-between(
+  $start,
+  $end,
+  $xy: false,
+  $x: false, 
+  $y: false,
+  $top: false,
+  $right: false,
+  $bottom: false,
+  $left: false,
+  ) {
   @media screen and (min-width: $start) and (max-width: $end - 1px) {
-    padding-top: $top;
-    padding-right: $right;
-    padding-left: $left;
-    padding-bottom: $bottom; 
+    @include pad($xy,$x,$y,$top,$right,$bottom,$left); 
   }
 }
 
@@ -154,7 +198,7 @@
       }
       
       @else {
-        @include pad-from(nth($breakpoints, $key), $dir, $val);
+        @include single-pad-from(nth($breakpoints, $key), $dir, $val);
       }
     }
   } 
